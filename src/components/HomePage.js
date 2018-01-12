@@ -17,10 +17,10 @@ class HomePage extends React.Component {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
     const renderer = new THREE.WebGLRenderer({ antialias: true })
-    const geometry = new THREE.OctahedronGeometry(0, 1)
-    const material = new THREE.MeshPhongMaterial({ color: '#433F81' })
+    const geometry = new THREE.OctahedronGeometry(10, 1)
+    const material = new THREE.MeshPhongMaterial({ color: '#ffffff', side: THREE.DoubleSide })
     const imgMesh = new THREE.Mesh(geometry, material)
-    const ambientLight = new THREE.AmbientLight(0xffffff);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
     const pointLight = new THREE.PointLight(0xffffff, 0.5);
     pointLight.position.set(0, 0, 20);
@@ -28,14 +28,14 @@ class HomePage extends React.Component {
 
     camera.position.z = 4
     scene.add(imgMesh)
-    renderer.setClearColor('#FFFCF9')
+    renderer.setClearColor('#FFF7F0')
     renderer.setSize(width, height)
 
     var texture = new THREE.TextureLoader().load( "./img/textures/test1.png", (texture) => {
       material.map = texture
       texture.wrapS = THREE.MirroredRepeatWrapping;
       texture.wrapT = THREE.MirroredRepeatWrapping;
-      texture.repeat.set( 4, 4 );
+      texture.repeat.set( 6, 6 );
 
       this.scene = scene
       this.camera = camera
