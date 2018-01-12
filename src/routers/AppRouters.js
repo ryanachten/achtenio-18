@@ -12,7 +12,7 @@ import Header from '../components/Header';
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-    <Header />
+    {/* <Header /> */}
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/portfolio" component={PortfolioPage} exact={true} />
