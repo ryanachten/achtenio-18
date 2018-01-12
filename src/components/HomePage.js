@@ -18,8 +18,13 @@ class HomePage extends React.Component {
     const camera = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
     const renderer = new THREE.WebGLRenderer({ antialias: true })
     const geometry = new THREE.OctahedronGeometry(0, 1)
-    const material = new THREE.MeshBasicMaterial({ color: '#433F81' })
+    const material = new THREE.MeshPhongMaterial({ color: '#433F81' })
     const imgMesh = new THREE.Mesh(geometry, material)
+    const ambientLight = new THREE.AmbientLight(0xffffff);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xffffff, 0.5);
+    pointLight.position.set(0, 0, 20);
+    scene.add(pointLight);
 
     camera.position.z = 4
     scene.add(imgMesh)
@@ -67,7 +72,7 @@ class HomePage extends React.Component {
     this.imgMesh.rotation.y += 0.01
 
     this.texture.offset.x -= 0.005
-    this.texture.offset.y -= 0.005
+    this.texture.offset.y += 0.005
 
     this.renderScene()
     this.frameId = window.requestAnimationFrame(this.animate)
