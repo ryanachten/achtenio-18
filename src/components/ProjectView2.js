@@ -9,10 +9,9 @@ class ProjectView extends React.Component{
     super(props);
     this.state = {
       currentIndex: 0,
-      ids: Object.keys(projects),
-      id: 'vertice',
-      title: projects['vertice'].title,
-      subtitle: projects['vertice'].subtitle
+      id: '',
+      title: '',
+      subtitle: ''
     }
   }
 
@@ -25,7 +24,8 @@ class ProjectView extends React.Component{
   }
 
   changeProject(){
-    if (this.state.currentIndex+1 >= this.state.ids.length) {
+    // console.log(projects.length);
+    if (this.state.currentIndex+1 >= projects.length) {
       this.setState(() => ({
         currentIndex: 0
       }));
@@ -35,21 +35,21 @@ class ProjectView extends React.Component{
         currentIndex: prevState.currentIndex+1
       }));
     }
-    const curId = this.state.ids[this.state.currentIndex]
-    const curProject = projects[curId];
+    const curProject = projects[this.state.currentIndex];
     this.setState(()=>({
-      id: curId,
+      id: curProject.id,
       title: curProject.title,
       subtitle: curProject.subtitle
     }));
   }
 
+
   render = () => {
 
     return(
       <div>
-        <p>{this.state.currentIndex}</p>
-        <Link to={`/work/${this.state.id}`}>
+        <p>{this.state.id}</p>
+        <Link to={`/work/${id}`}>
           <h1>{this.state.title}</h1>
         </Link>
         <h2>{this.state.subtitle}</h2>

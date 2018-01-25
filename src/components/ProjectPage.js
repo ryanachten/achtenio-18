@@ -1,8 +1,10 @@
 import React from 'react';
+import projects from '../store';
 
-const Project1 = (props) => {
+const ProjectPage = (props) => {
 
-  console.log(props);
+  const project = projects[props.match.params.id];
+  console.log(project);
 
   return(
     <div>
@@ -12,4 +14,4 @@ const Project1 = (props) => {
   );
 };
 
-export default Project1;
+export default ProjectPage;
