@@ -4,7 +4,7 @@ import projects from '../store';
 
 let projectTransition;
 
-class ProjectView extends React.Component{
+class HomeView extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -12,7 +12,8 @@ class ProjectView extends React.Component{
       ids: Object.keys(projects),
       id: 'vertice',
       title: projects['vertice'].title,
-      subtitle: projects['vertice'].subtitle
+      subtitle: projects['vertice'].subtitle,
+      image: projects['vertice'].images[0]
     }
   }
 
@@ -40,7 +41,8 @@ class ProjectView extends React.Component{
     this.setState(()=>({
       id: curId,
       title: curProject.title,
-      subtitle: curProject.subtitle
+      subtitle: curProject.subtitle,
+      image: curProject.images[0]
     }));
   }
 
@@ -48,13 +50,14 @@ class ProjectView extends React.Component{
 
     return(
       <div>
+        <img src={this.state.image}></img>
         <p>{this.state.currentIndex}</p>
         <Link to={`/work/${this.state.id}`}>
           <h1>{this.state.title}</h1>
         </Link>
-        <h2>{this.state.subtitle}</h2>
+        <h2>{this.state.subtitle}</h2>        
       </div>
     );
   };
 }
-export default ProjectView;
+export default HomeView;

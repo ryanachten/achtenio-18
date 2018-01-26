@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectView from './ProjectView';
+import ProjectView from './HomeView';
 import projects from '../store';
 
 const HomePage = () => {
