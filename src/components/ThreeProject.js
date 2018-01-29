@@ -1,7 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
 
-class HomePage extends React.Component {
+class ThreeProject extends React.Component {
   constructor(props) {
     super(props)
 
@@ -11,6 +11,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
 
@@ -35,7 +36,7 @@ class HomePage extends React.Component {
     renderer.setClearColor('#FFF7F0')
     renderer.setSize(width, height)
 
-    const texture = new THREE.TextureLoader().load( "./img/textures/test2.png", (texture) => {
+    const texture = new THREE.TextureLoader().load( './img/textures/' + this.props.texture, (texture) => {
       material.map = texture
       texture.wrapS = THREE.MirroredRepeatWrapping;
       texture.wrapT = THREE.MirroredRepeatWrapping;
@@ -57,14 +58,15 @@ class HomePage extends React.Component {
       this.mount.appendChild(this.renderer.domElement)
       this.start()
     });
-
-
-
   }
 
   componentWillUnmount() {
     this.stop()
     this.mount.removeChild(this.renderer.domElement)
+  }
+
+  setupMaterials(){
+
   }
 
   start() {
@@ -106,4 +108,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage
+export default ThreeProject

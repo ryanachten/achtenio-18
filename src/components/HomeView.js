@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import projects from '../store';
+import ThreeProject from './ThreeProject';
 
 let projectTransition;
 
@@ -13,7 +14,7 @@ class HomeView extends React.Component{
       id: 'vertice',
       title: projects['vertice'].title,
       subtitle: projects['vertice'].subtitle,
-      image: projects['vertice'].images[0]
+      texture: projects['vertice'].textureImg
     }
   }
 
@@ -42,7 +43,7 @@ class HomeView extends React.Component{
       id: curId,
       title: curProject.title,
       subtitle: curProject.subtitle,
-      image: curProject.images[0]
+      texture: curProject.textureImg
     }));
   }
 
@@ -50,12 +51,12 @@ class HomeView extends React.Component{
 
     return(
       <div>
-        <img src={this.state.image}></img>
+        <ThreeProject texture={this.state.texture}/>
         <p>{this.state.currentIndex}</p>
         <Link to={`/work/${this.state.id}`}>
           <h1>{this.state.title}</h1>
         </Link>
-        <h2>{this.state.subtitle}</h2>        
+        <h2>{this.state.subtitle}</h2>
       </div>
     );
   };
