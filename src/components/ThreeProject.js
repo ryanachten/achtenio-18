@@ -12,7 +12,9 @@ class ThreeProject extends React.Component {
     this.animate = this.animate.bind(this);
 
     this.state = {
-      project: props.currentProject
+      meshScale: props.meshScale,
+      project: props.currentProject,
+      textures: props.textures
     }
   }
 
@@ -30,18 +32,11 @@ class ThreeProject extends React.Component {
 
     this.renderer = renderer(width, height);
 
-
-    const testTextures = [
-      {project: 'vertice', path: 'vertice.png'},
-      {project: 'vuw', path: 'vuw.png'}
-    ];
-    
     const parentRef = this;
-    loadTextures(testTextures, function(loadedTextures){
+    loadTextures(this.state.textures, function(loadedTextures){
       createMaterials(loadedTextures, function(loadedMaterials){
 
-        let meshScale = 1;
-        // this.meshScale = meshScale;
+        const meshScale = parentRef.state.meshScale;
 
         createObject(
           meshScale,
@@ -79,8 +74,8 @@ class ThreeProject extends React.Component {
   }
 
   animate() {
-    this.imgObj.rotation.x += 0.01
-    this.imgObj.rotation.y += 0.01
+    this.imgObj.rotation.x += 0.01;
+    this.imgObj.rotation.y += 0.01;
 
     // let s = Math.sin(this.meshScale)*10+1;
     // this.imgObj.scale.set(s,s,s);

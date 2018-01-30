@@ -31,7 +31,6 @@ export const createMaterials = (textures, onLoad) => {
 };
 
 export const createObject = (meshScale, materials, stateMaterial, onDone) => {
-  console.log(meshScale);
   const geometry = new THREE.OctahedronGeometry(meshScale, 1);
   const imgMesh = new THREE.Mesh(geometry, stateMaterial);
   const imgObj = new THREE.Object3D();

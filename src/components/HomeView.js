@@ -14,7 +14,9 @@ class HomeView extends React.Component{
       id: 'vertice',
       title: projects['vertice'].title,
       subtitle: projects['vertice'].subtitle,
-      texture: projects['vertice'].textureImg
+      textures: Object.keys(projects).map(
+        (key) => ({project: key, path: projects[key].textureImg})
+      )
     }
   }
 
@@ -43,7 +45,6 @@ class HomeView extends React.Component{
       id: curId,
       title: curProject.title,
       subtitle: curProject.subtitle,
-      texture: curProject.textureImg
     }));
   }
 
@@ -51,7 +52,7 @@ class HomeView extends React.Component{
 
     return(
       <div>
-        <ThreeProject texture={this.state.texture} currentProject={this.state.id}/>
+        <ThreeProject meshScale={1} textures={this.state.textures} currentProject={this.state.id}/>
         <p>{this.state.currentIndex}</p>
         <Link to={`/work/${this.state.id}`}>
           <h1>{this.state.title}</h1>
