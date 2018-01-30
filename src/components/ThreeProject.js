@@ -1,5 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
+import {scene, camera, lights, renderer} from './ThreeInitScene';
+import {loadTextures, createMaterials, createObject} from './ThreeObjSetup';
 
 class ThreeProject extends React.Component {
   constructor(props) {
@@ -8,6 +10,10 @@ class ThreeProject extends React.Component {
     this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
     this.animate = this.animate.bind(this);
+
+    this.state = {
+      project: props.currentProject
+    }
   }
 
   componentDidMount() {
@@ -15,85 +21,42 @@ class ThreeProject extends React.Component {
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
 
-    const scene = new THREE.Scene();
     this.scene = scene;
 
-    const camera = setupCamera();
-    function setupCamera(){
-      const cam = new THREE.PerspectiveCamera( 75, width / height, 0.1, 1000 );
-      cam.position.z = 4
-      return cam;
-    }
-    this.camera = camera;
+    this.camera = camera(width, height);
 
-    function setupLights(){
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-      scene.add(ambientLight);
-      const pointLight = new THREE.PointLight(0xffffff, 0.5);
-      pointLight.position.set(0, 0, 20);
-      scene.add(pointLight);
-    }
-    setupLights();
+    scene.add(lights.ambient);
+    scene.add(lights.point);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor('#FFF7F0');
-    renderer.setSize(width, height);
-    this.renderer = renderer;
-
-    let meshScale = 1;
-    this.meshScale = meshScale;
+    this.renderer = renderer(width, height);
 
 
-    setupObject(this);
+    const testTextures = [
+      {project: 'vertice', path: 'vertice.png'},
+      {project: 'vuw', path: 'vuw.png'}
+    ];
+    
+    const parentRef = this;
+    loadTextures(testTextures, function(loadedTextures){
+      createMaterials(loadedTextures, function(loadedMaterials){
 
-    function setupObject(parentRef){
-      loadTextures();
-      function loadTextures() {
-        const loader = new THREE.TextureLoader();
-        // TODO: pass from props
-        const textures = [
-          {project: 'vertice', path: 'vertice.png'},
-          {project: 'vuw', path: 'vuw.png'}
-        ];
-        let loaded = [];
-        for (var i = 0; i < textures.length; i++) {
-          const curTexture = textures[i];
-          const texture = loader.load( './img/textures/' + curTexture.path, (texture) => {
-              texture.name = curTexture.project;
-              loaded.push(texture);
-              if (loaded.length === textures.length) {
-                createMaterials(loaded);
-              }
-          });
-        }
-      };
-      function createMaterials(textures){
-        let materials = {};
-        for (var i = 0; i < textures.length; i++) {
-          const material = new THREE.MeshPhongMaterial({ color: '#ffffff', side: THREE.DoubleSide });
-          material.map = textures[i];
-          material.map.wrapS = THREE.MirroredRepeatWrapping;
-          material.map.wrapT = THREE.MirroredRepeatWrapping;
-          material.map.repeat.set( 6, 6 );
-          materials[textures[i].name] = material;
-        }
-        createObject(materials);
-      };
+        let meshScale = 1;
+        // this.meshScale = meshScale;
 
-      function createObject(materials){
-        const geometry = new THREE.OctahedronGeometry(meshScale, 1);
-        const imgMesh = new THREE.Mesh(geometry, materials[parentRef.props.currentProject]);
-        const imgObj = new THREE.Object3D();
-        imgObj.add(imgMesh);
-        scene.add(imgObj);
+        createObject(
+          meshScale,
+          loadedMaterials,
+          loadedMaterials[parentRef.state.currentProject],
+          function(imgObj){
+            scene.add(imgObj);
+            parentRef.materials = loadedMaterials;
+            parentRef.imgObj = imgObj;
 
-        parentRef.materials = materials;
-        parentRef.imgObj = imgObj;
-
-        parentRef.mount.appendChild(parentRef.renderer.domElement)
-        parentRef.start()
-      };
-    }
+            parentRef.mount.appendChild(parentRef.renderer.domElement);
+            parentRef.start();
+        });
+      });
+    });
   }
 
   componentWillUnmount() {
@@ -123,18 +86,19 @@ class ThreeProject extends React.Component {
     // this.imgObj.scale.set(s,s,s);
     // this.meshScale -= 0.002;
     // console.log();
-    this.imgObj.children[0].material = this.materials[this.props.currentProject];
-
+    if (this.state.currentProject !== this.props.currentProject) {
+      this.imgObj.children[0].material = this.materials[this.props.currentProject];
+    }
     const texture = this.imgObj.children[0].material.map;
-    texture.offset.x -= 0.005
-    texture.offset.y += 0.005
+    texture.offset.x -= 0.005;
+    texture.offset.y += 0.005;
 
     this.renderScene()
-    this.frameId = window.requestAnimationFrame(this.animate)
+    this.frameId = window.requestAnimationFrame(this.animate);
   }
 
   renderScene() {
-    this.renderer.render(this.scene, this.camera)
+    this.renderer.render(this.scene, this.camera);
   }
 
   render() {
