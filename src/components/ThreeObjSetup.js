@@ -34,6 +34,7 @@ export const createObject = (meshScale, materials, currentProject, onDone) => {
   const geometry = new THREE.OctahedronGeometry(meshScale, 1);
   const imgMesh = new THREE.Mesh(geometry, materials[currentProject]);
   const imgObj = new THREE.Object3D();
+  imgObj.name = 'imgObj';
   imgObj.add(imgMesh);
 
   onDone(imgObj)

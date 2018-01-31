@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import * as THREE from 'three';
 import {status, scene, camera, lights, renderer} from './ThreeInitScene';
 import {loadTextures, createMaterials, createObject} from './ThreeObjSetup';
@@ -17,7 +18,8 @@ class ThreeProject extends React.Component {
       textures: props.textures,
       transitionOut: false,
       transitionIn: false,
-      opacity: 1
+      opacity: 1,
+      imgObj: undefined
     }
   }
 
@@ -48,10 +50,19 @@ class ThreeProject extends React.Component {
           loadedMaterials,
           parentRef.props.currentProject,
           function(imgObj){
-            scene.add(imgObj);
+            // Prevents multiple imgObjects being created and added to the scene
+            const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
+            if (!existingImgObj) {
+              scene.add(imgObj);
+            }
+            else{
+              imgObj = existingImgObj;
+            }
+
             parentRef.materials = loadedMaterials;
             parentRef.imgObj = imgObj;
 
+            parentRef.renderer.domElement.id = 'three-canvas';
             parentRef.mount.appendChild(parentRef.renderer.domElement);
             parentRef.start();
         });
@@ -64,10 +75,6 @@ class ThreeProject extends React.Component {
     this.mount.removeChild(this.renderer.domElement)
   }
 
-  setupMaterials(){
-
-  }
-
   start() {
     if (!this.frameId) {
       this.frameId = requestAnimationFrame(this.animate)
@@ -75,7 +82,6 @@ class ThreeProject extends React.Component {
   }
 
   stop() {
-    console.log('cancelAnimationFrame');
     cancelAnimationFrame(this.frameId)
   }
 
