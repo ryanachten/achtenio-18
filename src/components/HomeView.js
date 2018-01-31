@@ -21,7 +21,7 @@ class HomeView extends React.Component{
   }
 
   componentDidMount() {
-    projectTransition = setInterval( () => this.changeProject(), 3000);
+    projectTransition = setInterval( () => this.changeProject(), 5000);
   }
 
   componentWillUnmount() {
@@ -52,7 +52,7 @@ class HomeView extends React.Component{
 
     return(
       <div>
-        <ThreeProject meshScale={1} textures={this.state.textures} currentProject={this.state.id}/>
+        <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id}/>
         <p>{this.state.currentIndex}</p>
         <Link to={`/work/${this.state.id}`}>
           <h1>{this.state.title}</h1>

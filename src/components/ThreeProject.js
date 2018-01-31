@@ -13,8 +13,11 @@ class ThreeProject extends React.Component {
 
     this.state = {
       meshScale: props.meshScale,
-      project: props.currentProject,
-      textures: props.textures
+      currentProject: props.currentProject,
+      textures: props.textures,
+      transitionOut: false,
+      transitionIn: false,
+      opacity: 1
     }
   }
 
@@ -41,7 +44,7 @@ class ThreeProject extends React.Component {
         createObject(
           meshScale,
           loadedMaterials,
-          loadedMaterials[parentRef.state.currentProject],
+          parentRef.props.currentProject,
           function(imgObj){
             scene.add(imgObj);
             parentRef.materials = loadedMaterials;
@@ -81,9 +84,42 @@ class ThreeProject extends React.Component {
     // this.imgObj.scale.set(s,s,s);
     // this.meshScale -= 0.002;
     // console.log();
+
+    const opacityStep = 0.05;
+
     if (this.state.currentProject !== this.props.currentProject) {
-      this.imgObj.children[0].material = this.materials[this.props.currentProject];
+      this.setState({
+        transitionOut: true,
+        currentProject: this.props.currentProject
+      });
     }
+
+    if (this.state.transitionOut) {
+      if (this.state.opacity-opacityStep < 0) {
+        this.imgObj.children[0].material = this.materials[this.props.currentProject];
+        this.setState({
+          transitionOut: false,
+          transitionIn: true
+        });
+      }
+      else{
+        this.state.opacity -= opacityStep;
+        this.imgObj.children[0].material.opacity = this.state.opacity;
+      }
+    }
+
+    if (this.state.transitionIn) {
+      if (this.state.opacity+opacityStep > 1) {
+        this.setState({
+            transitionIn: false
+        });
+      }
+      else{
+        this.state.opacity += opacityStep;
+        this.imgObj.children[0].material.opacity = this.state.opacity;
+      }
+    }
+
     const texture = this.imgObj.children[0].material.map;
     texture.offset.x -= 0.005;
     texture.offset.y += 0.005;

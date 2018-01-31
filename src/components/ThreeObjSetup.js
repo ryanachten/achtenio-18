@@ -18,7 +18,7 @@ export const loadTextures = (textures, onLoad) => {
 export const createMaterials = (textures, onLoad) => {
   let materials = {};
   for (var i = 0; i < textures.length; i++) {
-    const material = new THREE.MeshPhongMaterial({ color: '#ffffff', side: THREE.DoubleSide });
+    const material = new THREE.MeshPhongMaterial({ color: '#ffffff', side: THREE.DoubleSide, transparent: true, opacity: 1 });
     material.map = textures[i];
     material.map.wrapS = THREE.MirroredRepeatWrapping;
     material.map.wrapT = THREE.MirroredRepeatWrapping;
@@ -30,9 +30,10 @@ export const createMaterials = (textures, onLoad) => {
   }
 };
 
-export const createObject = (meshScale, materials, stateMaterial, onDone) => {
+export const createObject = (meshScale, materials, currentProject, onDone) => {
   const geometry = new THREE.OctahedronGeometry(meshScale, 1);
-  const imgMesh = new THREE.Mesh(geometry, stateMaterial);
+  const imgMesh = new THREE.Mesh(geometry, materials[currentProject]);
+  console.log(materials);
   const imgObj = new THREE.Object3D();
   imgObj.add(imgMesh);
 
