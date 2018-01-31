@@ -1,5 +1,7 @@
 import React from 'react';
+import $ from 'jquery';
 import * as THREE from 'three';
+import stats from 'stats.js';
 import {scene, camera, lights, renderer} from './ThreeInitScene';
 import {loadTextures, createMaterials, createObject} from './ThreeObjSetup';
 
@@ -22,6 +24,14 @@ class ThreeProject extends React.Component {
   }
 
   componentDidMount() {
+
+    const status = stats();
+    status.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+    status.dom.id = "stats";
+    console.log(status.dom.style);
+    document.body.appendChild( status.dom );
+    $('#stats').css('right', '0px').css('left', 'unset');
+    this.stats = status;
 
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
@@ -77,6 +87,9 @@ class ThreeProject extends React.Component {
   }
 
   animate() {
+
+    this.stats.begin();
+
     this.imgObj.rotation.x += 0.01;
     this.imgObj.rotation.y += 0.01;
 
@@ -124,8 +137,10 @@ class ThreeProject extends React.Component {
     texture.offset.x -= 0.005;
     texture.offset.y += 0.005;
 
-    this.renderScene()
+    this.renderScene();
+
     this.frameId = window.requestAnimationFrame(this.animate);
+    this.stats.end();
   }
 
   renderScene() {

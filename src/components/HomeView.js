@@ -22,7 +22,7 @@ class HomeView extends React.Component{
   }
 
   componentDidMount() {
-    projectTransition = setInterval( () => this.changeProject(), 5000);
+    projectTransition = setInterval( () => this.changeProject(), 10000);
   }
 
   componentWillUnmount() {
