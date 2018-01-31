@@ -95,7 +95,7 @@ class ThreeProject extends React.Component {
     }
 
     if (this.state.transitionOut) {
-      if (this.state.opacity-opacityStep < 0) {
+      if (this.state.opacity < 0) {
         this.imgObj.children[0].material = this.materials[this.props.currentProject];
         this.setState({
           transitionOut: false,
@@ -109,7 +109,7 @@ class ThreeProject extends React.Component {
     }
 
     if (this.state.transitionIn) {
-      if (this.state.opacity+opacityStep > 1) {
+      if (this.state.opacity > 1) {
         this.setState({
             transitionIn: false
         });

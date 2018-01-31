@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
 import projects from '../store';
 import ThreeProject from './ThreeProject';
 
@@ -29,23 +30,27 @@ class HomeView extends React.Component{
   }
 
   changeProject(){
-    if (this.state.currentIndex+1 >= this.state.ids.length) {
-      this.setState(() => ({
-        currentIndex: 0
+    $('.homeview--projectInfo').fadeOut(1000, () => {
+      if (this.state.currentIndex+1 >= this.state.ids.length) {
+        this.setState(() => ({
+          currentIndex: 0
+        }));
+      }
+      else{
+        this.setState((prevState) => ({
+          currentIndex: prevState.currentIndex+1
+        }));
+      }
+      const curId = this.state.ids[this.state.currentIndex]
+      const curProject = projects[curId];
+      this.setState(()=>({
+        id: curId,
+        title: curProject.title,
+        subtitle: curProject.subtitle,
       }));
-    }
-    else{
-      this.setState((prevState) => ({
-        currentIndex: prevState.currentIndex+1
-      }));
-    }
-    const curId = this.state.ids[this.state.currentIndex]
-    const curProject = projects[curId];
-    this.setState(()=>({
-      id: curId,
-      title: curProject.title,
-      subtitle: curProject.subtitle,
-    }));
+      $('.homeview--projectInfo').fadeIn(1000);
+    });
+
   }
 
   render = () => {
@@ -53,11 +58,13 @@ class HomeView extends React.Component{
     return(
       <div>
         <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id}/>
-        <p>{this.state.currentIndex}</p>
-        <Link to={`/work/${this.state.id}`}>
-          <h1>{this.state.title}</h1>
-        </Link>
-        <h2>{this.state.subtitle}</h2>
+        <div className="homeview--projectInfo">
+          <p>{this.state.currentIndex}</p>
+          <Link to={`/work/${this.state.id}`}>
+            <h1>{this.state.title}</h1>
+          </Link>
+          <h2>{this.state.subtitle}</h2>
+        </div>
       </div>
     );
   };
