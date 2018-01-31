@@ -1,8 +1,6 @@
 import React from 'react';
-import $ from 'jquery';
 import * as THREE from 'three';
-import stats from 'stats.js';
-import {scene, camera, lights, renderer} from './ThreeInitScene';
+import {status, scene, camera, lights, renderer} from './ThreeInitScene';
 import {loadTextures, createMaterials, createObject} from './ThreeObjSetup';
 
 class ThreeProject extends React.Component {
@@ -25,12 +23,6 @@ class ThreeProject extends React.Component {
 
   componentDidMount() {
 
-    const status = stats();
-    status.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
-    status.dom.id = "stats";
-    console.log(status.dom.style);
-    document.body.appendChild( status.dom );
-    $('#stats').css('right', '0px').css('left', 'unset');
     this.stats = status;
 
     const width = this.mount.clientWidth;
@@ -83,6 +75,7 @@ class ThreeProject extends React.Component {
   }
 
   stop() {
+    console.log('cancelAnimationFrame');
     cancelAnimationFrame(this.frameId)
   }
 
