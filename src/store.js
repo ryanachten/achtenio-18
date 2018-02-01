@@ -20,7 +20,7 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/44228025/Vertice-3D-Archive-Interface' },
     ],
-    textureImg: 'vertice.png',
+    textureImg: '/img/textures/vertice.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee5cbd60149489.5a3e1aab93972.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png',
@@ -43,7 +43,7 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/60161381/VUW-School-of-Design-Website-Design' }
     ],
-    textureImg: 'vuw.png',
+    textureImg: '/img/textures/vuw.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/2bf35a60161381.5a51b2112e4e9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e70b1b60161381.5a51b2112e8e9.jpg',

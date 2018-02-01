@@ -57,7 +57,7 @@ class HomeView extends React.Component{
 
     return(
       <div>
-        <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id} transition={false} />
+        <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id} transition={true} />
         <div className="homeview--projectInfo">
           <p>{this.state.currentIndex}</p>
           <Link to={`/work/${this.state.id}`}>

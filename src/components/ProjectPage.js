@@ -1,6 +1,7 @@
 import React from 'react';
 import projects from '../store';
 import uuid from 'uuid';
+import ProjectSplash from './ProjectSplash';
 
 const ProjectPage = (props) => {
 
@@ -14,11 +15,13 @@ const ProjectPage = (props) => {
     credits = undefined,
     tools,
     social,
+    textureImg,
     images
   } = projects[props.match.params.id];
 
   return(
     <div>
+      <ProjectSplash id={props.match.params.id} texturePath={textureImg} />
       <h1>{title}</h1>
       <h2>{subtitle}</h2>
       <h4>{date}</h4>
