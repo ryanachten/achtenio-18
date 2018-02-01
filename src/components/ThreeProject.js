@@ -7,18 +7,18 @@ class ThreeProject extends React.Component {
   constructor(props) {
     super(props)
 
-    this.start = this.start.bind(this);
-    this.stop = this.stop.bind(this);
+    // this.start = this.start.bind(this);
+    // this.stop = this.stop.bind(this);
     this.animate = this.animate.bind(this);
 
     this.state = {
       meshScale: props.meshScale,
       currentProject: props.currentProject,
       textures: props.textures,
+      transition: props.transition,
       transitionOut: false,
       transitionIn: false,
       opacity: 1,
-      imgObj: undefined
     }
   }
 
@@ -33,23 +33,20 @@ class ThreeProject extends React.Component {
 
     this.camera = camera(width, height);
 
-    scene.add(lights.ambient);
-    scene.add(lights.point);
+    scene.add(lights.ambient, lights.point);
 
     this.renderer = renderer(width, height);
 
     const parentRef = this;
     loadTextures(this.state.textures, function(loadedTextures){
       createMaterials(loadedTextures, function(loadedMaterials){
-
-        const meshScale = parentRef.state.meshScale;
-
         createObject(
-          meshScale,
+          parentRef.state.meshScale,
           loadedMaterials,
           parentRef.props.currentProject,
           function(imgObj){
-            // Prevents multiple imgObjects being created and added to the scene
+            // Prevents multiple imgObjects being created
+            // and added to the scene
             const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
             if (!existingImgObj) {
               scene.add(imgObj);
@@ -84,17 +81,7 @@ class ThreeProject extends React.Component {
     cancelAnimationFrame(this.frameId)
   }
 
-  animate() {
-
-    this.stats.begin();
-
-    this.imgObj.rotation.x += 0.01;
-    this.imgObj.rotation.y += 0.01;
-
-    // let s = Math.sin(this.meshScale)*10+1;
-    // this.imgObj.scale.set(s,s,s);
-    // this.meshScale -= 0.002;
-    // console.log();
+  materialTransition(){
 
     const opacityStep = 0.05;
 
@@ -129,6 +116,19 @@ class ThreeProject extends React.Component {
         this.state.opacity += opacityStep;
         this.imgObj.children[0].material.opacity = this.state.opacity;
       }
+    }
+  }
+
+  animate() {
+
+    this.stats.begin();
+
+    this.imgObj.rotation.x += 0.01;
+    this.imgObj.rotation.y += 0.01;
+
+    // Only apply transition if multiple projects are needed
+    if (this.state.transition) {
+      this.materialTransition();
     }
 
     const texture = this.imgObj.children[0].material.map;
