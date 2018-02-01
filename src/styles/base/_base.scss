@@ -18,3 +18,16 @@ button:disabled{
 .is-active{
   font-weight: bold;
 }
+
+h1{
+  font-family: $type-kumar;
+  text-transform: lowercase;
+}
+
+p{
+  font-family: $type-serif;
+}
+
+a{
+  text-decoration: none;
+}
