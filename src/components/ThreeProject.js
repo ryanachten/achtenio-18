@@ -1,8 +1,7 @@
 import React from 'react';
-import $ from 'jquery';
 import * as THREE from 'three';
-import {status, scene, camera, lights, renderer} from './ThreeInitScene';
-import {loadTextures, createMaterials, createObject} from './ThreeObjSetup';
+import {status, scene, camera, lights, renderer} from '../three/initScene';
+import {loadTextures, createMaterials, createObject} from '../three/objSetup';
 
 class ThreeProject extends React.Component {
   constructor(props) {
