@@ -45,18 +45,11 @@ class ThreeProject extends React.Component {
           loadedMaterials,
           parentRef.props.currentProject,
           function(imgObj){
-            // Prevents multiple imgObjects being created
-            // and added to the scene
-            const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
-            if (!existingImgObj) {
-              scene.add(imgObj);
-            }
-            else{
-              imgObj = existingImgObj;
-            }
+
+            scene.add(imgObj);
+            parentRef.imgObj = imgObj;
 
             parentRef.materials = loadedMaterials;
-            parentRef.imgObj = imgObj;
 
             parentRef.renderer.domElement.id = 'three-canvas';
             parentRef.mount.appendChild(parentRef.renderer.domElement);
@@ -68,6 +61,9 @@ class ThreeProject extends React.Component {
 
   componentWillUnmount() {
     this.stop()
+    // Prevent duplicate imgObjects being added to the scene
+    const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
+    this.scene.remove(existingImgObj);
     this.mount.removeChild(this.renderer.domElement)
   }
 
