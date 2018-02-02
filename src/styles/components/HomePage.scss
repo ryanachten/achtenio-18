@@ -1,0 +1,14 @@
+.homeview--projectInfo{
+  color: $body-color;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.homeview--projectIndex{
+  font-family: $type-kumar;
+}
+.homeview--projectTitle{
+  color: $body-color;
+}

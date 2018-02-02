@@ -144,7 +144,7 @@ class ThreeProject extends React.Component {
   render() {
     return (
       <div
-        style={{ width: '100vw', height: '100vh' }}
+        style={{ width: '100vw', height: '80vh' }}
         ref={(mount) => { this.mount = mount }}
       />
     )

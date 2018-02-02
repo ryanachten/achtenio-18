@@ -7,6 +7,12 @@ body{
   font-size: $m-size;
 }
 
+#router--container{
+  background-image: radial-gradient(50% 150%, #FFFCF9 51%, #D6C8BB 100%);
+  display: flex;
+  flex-flow: row wrap;
+}
+
 button{
   cursor: pointer;
 }
@@ -22,6 +28,13 @@ button:disabled{
 h1{
   font-family: $type-kumar;
   text-transform: lowercase;
+  font-size: $xl-size;
+}
+h2{
+  font-family: $type-sans;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: $m-size;
 }
 
 p{

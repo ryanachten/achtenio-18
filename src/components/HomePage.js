@@ -15,6 +15,7 @@ class HomePage extends React.Component{
       id: 'vertice',
       title: projects['vertice'].title,
       subtitle: projects['vertice'].subtitle,
+      date: projects['vertice'].date,
       textures: Object.keys(projects).map(
         (key) => ({project: key, path: projects[key].textureImg})
       )
@@ -47,6 +48,7 @@ class HomePage extends React.Component{
         id: curId,
         title: curProject.title,
         subtitle: curProject.subtitle,
+        date: curProject.date
       }));
       $('.homeview--projectInfo').fadeIn(1000);
     });
@@ -58,13 +60,24 @@ class HomePage extends React.Component{
     return(
       <div>
         <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id} transition={true} />
-        <div className="homeview--projectInfo">
-          <p>{this.state.currentIndex}</p>
-          <Link to={`/work/${this.state.id}`}>
-            <h1>{this.state.title}</h1>
-          </Link>
-          <h2>{this.state.subtitle}</h2>
-        </div>
+        <section className="homeview--projectInfo">
+          <p className="homeview--projectindex">
+            {(this.state.currentIndex +1) + '/' + this.state.ids.length}
+          </p>
+          <div>
+            <Link to={`/work/${this.state.id}`}>
+              <h1 className="homeview--projectTitle">
+                {this.state.title}
+              </h1>
+            </Link>
+            <h2 className="homeview--projectSubtitle">
+              {this.state.subtitle}
+            </h2>
+          </div>
+          <p className="homeview--projectDate">
+            {this.state.date}
+          </p>
+        </section>
       </div>
     );
   };
