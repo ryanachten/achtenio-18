@@ -61,7 +61,7 @@ class HomePage extends React.Component{
       <div>
         <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id} transition={true} />
         <section className="homeview--projectInfo">
-          <p className="homeview--projectindex">
+          <p className="homeview--projectIndex">
             {(this.state.currentIndex +1) + '/' + this.state.ids.length}
           </p>
           <div>

@@ -28,9 +28,11 @@
     "sass-loader": "6.0.6",
     "stats.js": "0.17.0",
     "style-loader": "0.18.2",
+    "svg-url-loader": "2.3.1",
     "three": "0.89.0",
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"
-  }
+  },
+  "devDependencies": {}
 }

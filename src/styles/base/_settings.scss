@@ -13,3 +13,9 @@ $l-size: 3.2rem;
 $xl-size: 4.8rem;
 
 $desktop-breakpoint: 45rem;
+
+// Branding
+.logotype{
+  font-family: $type-kumar;
+  text-transform: lowercase !important;
+}

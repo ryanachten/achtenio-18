@@ -2,13 +2,20 @@
   color: $body-color;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
   align-items: center;
 }
 .homeview--projectIndex{
   font-family: $type-kumar;
+  font-size: 2.4rem;
 }
 .homeview--projectTitle{
   color: $body-color;
+  margin: 40px 0 20px 0;
+}
+.homeview--projectDate{
+  font-family: $type-sans;
+  font-weight: bold;
+  letter-spacing: 3px;
 }

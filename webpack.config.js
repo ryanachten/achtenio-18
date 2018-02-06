@@ -18,7 +18,13 @@ module.exports = {
         'css-loader',
         'sass-loader'
       ],
-    }]
+    },{
+	    test: /\.svg/,
+	    use: {
+	        loader: 'svg-url-loader',
+	        options: {}
+	    }
+		}]
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {
