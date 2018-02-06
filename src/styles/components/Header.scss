@@ -6,9 +6,16 @@
   align-items: center;
   width: 100%;
 }
+
 .topnav--linkcontainer{
   display: none;
 }
+.topnav--linkcontainer.topnav--open{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .topnav--link{
   color: $body-color;
   font-size: 1.5rem;
@@ -23,7 +30,7 @@
   font-weight: bold;
 }
 
-.topnav--open{
+.topnav--menubutton{
   background-color: transparent;
   background-image: url('../img/icons/menu.svg');
   background-size: contain;
@@ -32,4 +39,11 @@
   height: 30px;
   width: 30px;
   padding: 0px;
+
+  &:focus{
+    outline: none;
+  }
+}
+.topnav--menubutton.topnav--open{
+  background-image: url('../img/icons/close.svg');
 }
