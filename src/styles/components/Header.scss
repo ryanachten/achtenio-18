@@ -1,4 +1,4 @@
-.topnav--container{
+.topNav--container{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -7,30 +7,30 @@
   width: 100%;
 }
 
-.topnav--linkcontainer{
+.topNav--linkContainer{
   display: none;
 }
-.topnav--linkcontainer.topnav--open{
+.topNav--linkContainer.topNav--open{
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.topnav--link{
+.topNav--link{
   color: $body-color;
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 20px 10px;
 }
-.logotype.topnav--link{
+.logotype.topNav--link{
   font-size: 2rem;
 }
 .is-active{
   font-weight: bold;
 }
 
-.topnav--menubutton{
+.topNav--menuButton{
   background-color: transparent;
   background-image: url('../img/icons/menu.svg');
   background-size: contain;
@@ -44,6 +44,6 @@
     outline: none;
   }
 }
-.topnav--menubutton.topnav--open{
+.topNav--menuButton.topNav--open{
   background-image: url('../img/icons/close.svg');
 }
