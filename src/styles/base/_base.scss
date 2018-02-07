@@ -27,18 +27,31 @@ h1{
   font-family: $type-kumar;
   text-transform: lowercase;
   font-size: $xl-size;
+  color: $body-color;
 }
 h2{
   font-family: $type-sans;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: $m-size;
+  color: $body-color;
+}
+h3,h4{
+  color: $body-color;
 }
 
 p{
   font-family: $type-serif;
+  color: $body-color;
+}
+
+li{
+  font-family: $type-serif;
+  color: $body-color;
 }
 
 a{
   text-decoration: none;
+  color: $body-color;
+  font-weight: bold;
 }

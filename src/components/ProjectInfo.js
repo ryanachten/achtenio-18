@@ -21,7 +21,7 @@ const ProjectInfo = (props) => {
     const randX = Math.floor(Math.random()*2);
     const randY = Math.floor(Math.random()*2);
     const randZ = Math.floor(Math.random()*2);
-    const randDeg = Math.floor(Math.random()*5);
+    const randDeg = Math.floor(Math.random()*5+1);
     return(
       { transform: `rotate3d(${randX}, ${randY}, ${randZ}, ${randDeg}deg)` }
     );
@@ -40,7 +40,12 @@ const ProjectInfo = (props) => {
         <p>{description}</p>
       </section>
 
-      <img className="project--img" src={images[0]} style={rotateImg()}></img>
+      <img className="project--img" src={images[0]}
+        onMouseOver={({target: {style}}) => {
+          if (style.animationPlayState !== 'initial') {
+            style.animation = 'img-roll 3s';
+          }
+        }}></img>
 
       <section className="project--section">
         <h4 className="project--sectionHeader">Role</h4>
@@ -61,7 +66,12 @@ const ProjectInfo = (props) => {
         </section>
       )}
 
-      <img className="project--img" src={images[1]} style={rotateImg()}></img>
+      <img className="project--img" src={images[1]}
+        onMouseOver={({target: {style}}) => {
+          if (style.animationPlayState !== 'initial') {
+            style.animation = 'img-roll 3s';
+          }
+        }}></img>
 
       <section className="project--section">
         <h4 className="project--sectionHeader">Tools</h4>
@@ -72,7 +82,12 @@ const ProjectInfo = (props) => {
         </ul>
       </section>
 
-      <img className="project--img" src={images[2]} style={rotateImg()}></img>
+      <img className="project--img" src={images[2]}
+        onMouseOver={({target: {style}}) => {
+          if (style.animationPlayState !== 'initial') {
+            style.animation = 'img-roll 3s';
+          }
+        }}></img>
 
       <section className="project--section">
         <h4 className="project--sectionHeader">Social</h4>

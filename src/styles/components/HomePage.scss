@@ -1,5 +1,4 @@
 .homeview--projectInfo{
-  color: $body-color;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -11,7 +10,6 @@
   font-size: 2.4rem;
 }
 .homeview--projectTitle{
-  color: $body-color;
   margin: 40px 0 20px 0;
 }
 .homeview--projectDate{
