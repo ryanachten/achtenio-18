@@ -1,5 +1,6 @@
 import React from 'react';
 import * as THREE from 'three';
+import $ from 'jquery';
 import {status, scene, camera, lights, renderer} from '../three/initScene';
 import {loadTextures, createMaterials, createObject} from '../three/objSetup';
 
@@ -19,6 +20,8 @@ class ThreeProject extends React.Component {
       transitionOut: false,
       transitionIn: false,
       opacity: 1,
+      canvasWidth: $(window).width(),
+      canvasHeight: $(window).height()*0.8
     }
   }
 
@@ -27,7 +30,7 @@ class ThreeProject extends React.Component {
     this.stats = status;
 
     const width = this.mount.clientWidth;
-    const height = this.mount.clientHeight;
+    const height = this.getCanvasHeight();
 
     this.scene = scene;
 
@@ -36,6 +39,9 @@ class ThreeProject extends React.Component {
     scene.add(lights.ambient, lights.point);
 
     this.renderer = renderer(width, height);
+
+    window.addEventListener("resize", this.updateDimensions.bind(this));
+    this.updateDimensions();
 
     const parentRef = this;
     loadTextures(this.state.textures, function(loadedTextures){
@@ -71,6 +77,35 @@ class ThreeProject extends React.Component {
     if (!this.frameId) {
       this.frameId = requestAnimationFrame(this.animate)
     }
+  }
+
+  getCanvasHeight(){
+
+    console.log('getCanvasHeight');
+    const topNav = $('.topNav--container').height();
+
+    let windowHeight = $(window).height()-topNav;
+    const projectInfo = $('.homeview--projectInfo').height();
+    if (projectInfo) {
+      windowHeight -= projectInfo;
+    }
+
+    return windowHeight;
+  }
+
+  updateDimensions(){
+
+    const canvasHeight = this.getCanvasHeight();
+    const canvasWidth = $(window).width();
+
+    this.setState({
+      canvasWidth,
+      canvasHeight
+    });
+    this.camera.aspect = canvasWidth / canvasHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize( canvasWidth, canvasHeight );
   }
 
   stop() {
@@ -144,7 +179,8 @@ class ThreeProject extends React.Component {
   render() {
     return (
       <div
-        style={{ width: '100vw', height: '80vh' }}
+        style={{  width: this.state.canvasWidth,
+                  height: this.state.canvasHeight }}
         ref={(mount) => { this.mount = mount }}
       />
     )
