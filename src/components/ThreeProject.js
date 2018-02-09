@@ -8,8 +8,6 @@ class ThreeProject extends React.Component {
   constructor(props) {
     super(props)
 
-    // this.start = this.start.bind(this);
-    // this.stop = this.stop.bind(this);
     this.animate = this.animate.bind(this);
 
     this.state = {
@@ -27,6 +25,31 @@ class ThreeProject extends React.Component {
 
   componentDidMount() {
 
+    this.setupThree();
+
+    window.addEventListener("resize", this.updateDimensions.bind(this));
+    this.updateDimensions();
+  }
+
+  componentWillUnmount() {
+    this.stop()
+    // Prevent duplicate imgObjects being added to the scene
+    const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
+    this.scene.remove(existingImgObj);
+    this.mount.removeChild(this.renderer.domElement)
+  }
+
+  start() {
+    if (!this.frameId) {
+      this.frameId = requestAnimationFrame(this.animate)
+    }
+  }
+
+  stop() {
+    cancelAnimationFrame(this.frameId)
+  }
+
+  setupThree(){
     this.stats = status;
 
     const width = this.mount.clientWidth;
@@ -39,9 +62,6 @@ class ThreeProject extends React.Component {
     scene.add(lights.ambient, lights.point);
 
     this.renderer = renderer(width, height);
-
-    window.addEventListener("resize", this.updateDimensions.bind(this));
-    this.updateDimensions();
 
     const parentRef = this;
     loadTextures(this.state.textures, function(loadedTextures){
@@ -65,23 +85,8 @@ class ThreeProject extends React.Component {
     });
   }
 
-  componentWillUnmount() {
-    this.stop()
-    // Prevent duplicate imgObjects being added to the scene
-    const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
-    this.scene.remove(existingImgObj);
-    this.mount.removeChild(this.renderer.domElement)
-  }
-
-  start() {
-    if (!this.frameId) {
-      this.frameId = requestAnimationFrame(this.animate)
-    }
-  }
-
   getCanvasHeight(){
 
-    console.log('getCanvasHeight');
     const topNav = $('.topNav--container').height();
 
     let windowHeight = $(window).height()-topNav;
@@ -106,10 +111,6 @@ class ThreeProject extends React.Component {
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize( canvasWidth, canvasHeight );
-  }
-
-  stop() {
-    cancelAnimationFrame(this.frameId)
   }
 
   materialTransition(){
