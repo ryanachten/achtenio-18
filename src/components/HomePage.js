@@ -5,6 +5,7 @@ import projects from '../store';
 import ThreeProject from './ThreeProject';
 
 let projectTransition;
+const defaultProject = 'hiko';
 
 class HomePage extends React.Component{
   constructor(props){
@@ -12,10 +13,10 @@ class HomePage extends React.Component{
     this.state = {
       currentIndex: 0,
       ids: Object.keys(projects),
-      id: 'vertice',
-      title: projects['vertice'].title,
-      subtitle: projects['vertice'].subtitle,
-      date: projects['vertice'].date,
+      id: defaultProject,
+      title: projects[defaultProject].title,
+      subtitle: projects[defaultProject].subtitle,
+      date: projects[defaultProject].date,
       textures: Object.keys(projects).map(
         (key) => ({project: key, path: projects[key].textureImg})
       )
