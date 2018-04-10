@@ -18,7 +18,8 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/62469047/Hiko-Digital-Writing-Platform' }
     ],
-    textureImg: '/img/textures/hiko.png',
+    textureImg: 'hiko.png',
+    thumbImg: 'indi.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c15dd62469047.5a913670eeab9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/98636b62469047.5a9138de43763.jpg',
@@ -40,7 +41,8 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/60161381/VUW-School-of-Design-Website-Design' }
     ],
-    textureImg: '/img/textures/vuw.png',
+    textureImg: 'vuw.png',
+    thumbImg: 'indi.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/2bf35a60161381.5a51b2112e4e9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e70b1b60161381.5a51b2112e8e9.jpg',
@@ -67,7 +69,8 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/44228025/Vertice-3D-Archive-Interface' },
     ],
-    textureImg: '/img/textures/vertice.png',
+    textureImg: 'vertice.png',
+    thumbImg: 'indi.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee5cbd60149489.5a3e1aab93972.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png',
@@ -90,7 +93,8 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/64144681/Visual-Working-Memory-Psychology-Web-App' }
     ],
-    textureImg: '/img/textures/vwm.png',
+    textureImg: 'vwm.png',
+    thumbImg: 'indi.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/cd21ef64144681.5ac95f806b35b.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/186a6864144681.5ac94db51194d.jpg',
@@ -110,7 +114,8 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/64144681/Visual-Working-Memory-Psychology-Web-App' }
     ],
-    textureImg: '/img/textures/indi.png',
+    textureImg: 'indi.png',
+    thumbImg: 'indi.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c7fdff62797437.5a9f9c3dc3034.gif',
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/897f1562797437.5a9fa38b23c07.gif',

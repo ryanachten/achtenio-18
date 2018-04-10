@@ -5,7 +5,7 @@ export const loadTextures = (textures, onLoad) => {
   let loaded = [];
   for (var i = 0; i < textures.length; i++) {
     const curTexture = textures[i];
-    const texture = loader.load( curTexture.path, (texture) => {
+    const texture = loader.load( '/img/textures/' + curTexture.path, (texture) => {
         texture.name = curTexture.project;
         loaded.push(texture);
         if (loaded.length === textures.length) {
