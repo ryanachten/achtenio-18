@@ -5,16 +5,21 @@ import projects from '../store';
 const WorkPage = () => {
 
   return (
-    <div>
+    <div className="thumbnail__container">
       { Object.keys(projects).map( ( key ) => (
         <div key={key}>
-          <Link to={`/work/${key}`}>
-            <h1>{projects[key].title}</h1>
+          <Link className="thumbnail__item" to={`/work/${key}`}>
+
+            {/* <div className="thumbnail__background"
+                  style={{backgroundImage:
+
+                  }}>
+            </div> */}
+            <img className="thumbnail__img"
+              src={`/img/thumbs/${projects[key].thumbImg}`}></img>
+            <h1 className="thumbnail__title">{projects[key].title}</h1>
+            <h2>{projects[key].subtitle}</h2>
           </Link>
-          <h2>{projects[key].subtitle}</h2>
-          <h4>{projects[key].date}</h4>
-          <p>{projects[key].description}</p>
-          <img src={projects[key].images[0]}></img>
         </div>
         )) }
     </div>

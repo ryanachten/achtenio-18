@@ -19,7 +19,7 @@ const projects = {
       url: 'https://www.behance.net/gallery/62469047/Hiko-Digital-Writing-Platform' }
     ],
     textureImg: 'hiko.png',
-    thumbImg: 'indi.png',
+    thumbImg: 'hiko.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c15dd62469047.5a913670eeab9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/98636b62469047.5a9138de43763.jpg',
@@ -42,7 +42,7 @@ const projects = {
       url: 'https://www.behance.net/gallery/60161381/VUW-School-of-Design-Website-Design' }
     ],
     textureImg: 'vuw.png',
-    thumbImg: 'indi.png',
+    thumbImg: 'vuw.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/2bf35a60161381.5a51b2112e4e9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e70b1b60161381.5a51b2112e8e9.jpg',
@@ -70,7 +70,7 @@ const projects = {
       url: 'https://www.behance.net/gallery/44228025/Vertice-3D-Archive-Interface' },
     ],
     textureImg: 'vertice.png',
-    thumbImg: 'indi.png',
+    thumbImg: 'vertice.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee5cbd60149489.5a3e1aab93972.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png',
@@ -94,7 +94,7 @@ const projects = {
       url: 'https://www.behance.net/gallery/64144681/Visual-Working-Memory-Psychology-Web-App' }
     ],
     textureImg: 'vwm.png',
-    thumbImg: 'indi.png',
+    thumbImg: 'vwm.png',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/cd21ef64144681.5ac95f806b35b.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/186a6864144681.5ac94db51194d.jpg',

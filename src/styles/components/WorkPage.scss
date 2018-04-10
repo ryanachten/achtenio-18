@@ -1,0 +1,19 @@
+.thumbnail__container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.thumbnail__item{
+  display: block;
+  margin: 20px;
+  min-width: 250px;
+  text-align: center;
+  width: 25vw;
+}
+.thumbnail__img{
+  width: 100%;
+}
+.thumbnail__title{
+  word-break: break-all;
+}
