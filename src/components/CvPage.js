@@ -4,68 +4,73 @@ const CvPage = () => {
 
   return (
     <div className="cv__container">
-      <h1 className="cv__title">CV</h1>
+
+      <h1 className="cv__title">Curriculum Vitae</h1>
+      <h2>RYAN ACHTEN | D.O.B 1992 | NEW ZEALAND</h2>
+
+      <hr className="cv__divider"/>
+
       <div className="cv__section">
         <h1>Interaction</h1>
         <div className="cv__item">
           <h2>JavaScript</h2>
           <ul>
-            <li>ES5 & ES6</li>
             <li>Babel</li>
-            <li>Webpack</li>
+            <li>ES5 & ES6</li>
+            <li>jQuery</li>
             <li>React</li>
             <li>Redux	</li>
-            <li>jQuery</li>
+            <li>Webpack</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>Creative Code</h2>
           <ul>
-            <li>Three.js</li>
-            <li>p5.js</li>
             <li>Canvas API</li>
+            <li>p5.js</li>
+            <li>Three.js</li>
             <li>Web Audio API</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>PHP</h2>
           <ul>
-            <li>WordPress</li>
             <li>SilverStripe</li>
+            <li>WordPress</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>Styles</h2>
           <ul>
             <li>CSS3</li>
-            <li>SCSS</li>
             <li>Sass</li>
+            <li>SCSS</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>Deployment</h2>
           <ul>
             <li>Git</li>
-            <li>Yarn</li>
+            <li>Heroku</li>
             <li>NPM</li>
             <li>Firebase</li>
-            <li>Heroku</li>
+            <li>Yarn</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>Misc</h2>
           <ul>
-            <li>Unity3D</li>
-            <li>Pure Data</li>
             <li>Arduino</li>
+            <li>Pure Data</li>
+            <li>Unity3D</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>Learning</h2>
           <ul>
             <li>GLSL</li>
-            <li>Node.js</li>
             <li>Jest</li>
+            <li>Node.js</li>
           </ul>
         </div>
       </div>
@@ -75,20 +80,20 @@ const CvPage = () => {
         <div className="cv__item">
           <h2>Graphic</h2>
           <ul>
-            <li>Sketch</li>
-            <li>Photoshop</li>
             <li>Illustrator</li>
             <li>InDesign</li>
+            <li>Photoshop</li>
+            <li>Sketch</li>
           </ul>
         </div>
         <div className="cv__item">
           <h2>3D</h2>
           <ul>
-            <li>Cinema 4D</li>
             <li>Agisoft PhotoScan</li>
+            <li>Cinema 4D</li>
+            <li>MeshLab</li>
             <li>Substance Designer</li>
             <li>ZBrush</li>
-            <li>MeshLab</li>
           </ul>
         </div>
         <div className="cv__item">
@@ -99,6 +104,8 @@ const CvPage = () => {
           </ul>
         </div>
       </div>
+
+      <hr className="cv__divider"/>
 
       <div className="cv__section work">
         <h1>Work</h1>
