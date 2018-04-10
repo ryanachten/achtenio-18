@@ -1,10 +1,11 @@
 .topNav--container{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 auto;
   text-align: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
 }
 
 .topNav--linkContainer{
@@ -13,7 +14,7 @@
 .topNav--linkContainer.topNav--open{
   display: flex;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
 }
 
 .topNav--link{
@@ -46,4 +47,13 @@
 }
 .topNav--menuButton.topNav--open{
   background-image: url('../img/icons/close.svg');
+}
+
+@media only screen and (max-width: 450px) {
+  .topNav--container{
+    justify-content: space-around;
+  }
+  .topNav--linkContainer{
+    width: 100%;
+  }
 }
