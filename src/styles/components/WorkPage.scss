@@ -6,8 +6,8 @@
 
 .thumbnail__item{
   display: block;
-  margin: 20px;
-  min-width: 250px;
+  margin: 30px;
+  min-width: 200px;
   text-align: center;
   width: 25vw;
 }
@@ -15,5 +15,6 @@
   width: 100%;
 }
 .thumbnail__title{
+  margin-bottom: 10px;
   word-break: break-all;
 }
