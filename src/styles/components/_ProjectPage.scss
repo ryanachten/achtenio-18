@@ -2,7 +2,6 @@
   align-items: center;
   display: flex;
   flex-flow: row wrap;
-  // height: 100vh;
   justify-content: center;
   position: absolute;
   text-align: center;
@@ -12,9 +11,9 @@
 
 .project__splashbox{
   h1, h2, h4 {
-    display: inline-block;
-    box-shadow: 0px 0px 0 10px #F0E9E2;
     background-color: $bg-color;
+    box-shadow: 0px 0px 0 10px #F0E9E2;
+    display: inline-block;
   }
   h1{
     box-shadow: 0px -9px 0 10px #F0E9E2;
