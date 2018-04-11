@@ -26,13 +26,15 @@ class ThreeProject extends React.Component {
   componentDidMount() {
 
     this.setupThree();
-
     window.addEventListener("resize", this.updateDimensions.bind(this));
     this.updateDimensions();
   }
 
   componentWillUnmount() {
     this.stop()
+    const statsCanvas = document.getElementById('stats');
+    statsCanvas.remove();
+
     // Prevent duplicate imgObjects being added to the scene
     const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
     this.scene.remove(existingImgObj);
@@ -50,7 +52,7 @@ class ThreeProject extends React.Component {
   }
 
   setupThree(){
-    this.stats = status;
+    this.stats = status();
 
     const width = this.mount.clientWidth;
     const height = this.getCanvasHeight();

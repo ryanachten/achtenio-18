@@ -3,6 +3,7 @@ import $ from 'jquery';
 import stats from 'stats.js';
 
 export const setupStatus = () => {
+  console.log('setup status');
   const status = stats();
   status.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
   status.dom.id = "stats";
@@ -11,7 +12,7 @@ export const setupStatus = () => {
 
   return status;
 }
-export const status = setupStatus();
+export const status = setupStatus;
 
 export const scene = new THREE.Scene();
 
