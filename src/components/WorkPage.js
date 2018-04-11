@@ -9,12 +9,6 @@ const WorkPage = () => {
       { Object.keys(projects).map( ( key ) => (
         <div key={key}>
           <Link className="thumbnail__item" to={`/work/${key}`}>
-
-            {/* <div className="thumbnail__background"
-                  style={{backgroundImage:
-
-                  }}>
-            </div> */}
             <img className="thumbnail__img"
               src={`/img/thumbs/${projects[key].thumbImg}`}></img>
             <h1 className="thumbnail__title">{projects[key].title}</h1>
