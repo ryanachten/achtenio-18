@@ -11,6 +11,7 @@ class ThreeProject extends React.Component {
     this.animate = this.animate.bind(this);
 
     this.state = {
+      showStats: false,
       meshScale: props.meshScale,
       currentProject: props.currentProject,
       textures: props.textures,
@@ -32,8 +33,10 @@ class ThreeProject extends React.Component {
 
   componentWillUnmount() {
     this.stop()
-    const statsCanvas = document.getElementById('stats');
-    statsCanvas.remove();
+    if (this.state.showStats) {
+      const statsCanvas = document.getElementById('stats');
+      statsCanvas.remove();
+    }
 
     // Prevent duplicate imgObjects being added to the scene
     const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
@@ -52,7 +55,9 @@ class ThreeProject extends React.Component {
   }
 
   setupThree(){
-    this.stats = status();
+    if (this.state.showStats) {
+      this.stats = status();
+    }
 
     const width = this.mount.clientWidth;
     const height = this.getCanvasHeight();
@@ -155,7 +160,9 @@ class ThreeProject extends React.Component {
 
   animate() {
 
-    this.stats.begin();
+    if (this.state.showStats) {
+      this.stats.begin();
+    }
 
     this.imgObj.rotation.x += 0.01;
     this.imgObj.rotation.y += 0.01;
@@ -172,7 +179,10 @@ class ThreeProject extends React.Component {
     this.renderScene();
 
     this.frameId = window.requestAnimationFrame(this.animate);
-    this.stats.end();
+
+    if (this.state.showStats) {
+        this.stats.end();
+    }
   }
 
   renderScene() {
