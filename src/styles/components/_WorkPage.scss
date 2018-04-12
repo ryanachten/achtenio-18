@@ -7,9 +7,10 @@
 .thumbnail__item{
   display: block;
   margin: 30px;
+  max-width: 1000px;
   min-width: 200px;
   text-align: center;
-  width: 25vw;
+  width: 40vw;
 }
 .thumbnail__img{
   width: 100%;
