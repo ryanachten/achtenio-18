@@ -4,10 +4,10 @@ const AboutPage = () => (
   <div className="about__container">
     <img className="about__logo" src="/img/icons/logo.svg"></img>
     <p className="about__splashText">
-      My name is Ryan Achten.<br/>
-      I’m a designer & developer based in Wellington, New Zealand.<br/>
+      Ryan Achten.<br/>
+      Designer & developer based in Wellington, New Zealand.<br/>
       <br/>
-      I’ve created all sorts of digital media, encompassing graphic, motion, and interactive works. I’ve worked with amazing people from cultural institutions and academics to musicians and other creative types.<br/>
+      Works with digital media, encompassing graphic, motion, and interactive projects. Has collaborated with cultural institutions, academics, musicians and other creative types.<br/>
     </p>
     <p>
       <br/>
