@@ -92,11 +92,12 @@ const ProjectInfo = (props) => {
         }}></img>
 
       <section className="project__section">
-        <h4 className="project__sectionHeader">Social</h4>
+        <h4 className="project__sectionHeader">Docs</h4>
+        <p>Interested? See further documentation at the links below:</p>
         <ul>
           {social.map( (site)=>(
-            <li key={uuid()}>
-              <a href={site.url}>{site.host}</a>
+            <li className="project__socialItem" key={uuid()}>
+              <a className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
             </li>
           ))}
         </ul>

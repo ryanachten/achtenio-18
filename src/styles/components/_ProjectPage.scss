@@ -43,6 +43,25 @@
   z-index: -1;
 }
 
+.project__socialItem{
+  display: inline-block;
+}
+.project__socialIcon{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 40px;
+  margin: 0 10px;
+  width: 40px;
+  &.behance{
+    background-image: url('/img/icons/social/behance.svg');
+  }
+  &.github{
+    background-image: url('/img/icons/social/github.svg');
+  }
+}
+
 @keyframes img-roll {
   0% {
     transform: rotate3d(1,0,1, 0deg);
