@@ -2,9 +2,9 @@ const projects = {
   hiko: {
     title: 'Hiko',
     subtitle: 'Digital Publishing Platform',
-    description: "Hiko is a digital writing and publishing platform developed for Victoria University of Wellington.",
+    description: "Hiko is a digital writing and publishing platform developed for Victoria University of Wellington. Hiko was produced out of a need to allow students to create individual and collaborative texts that were interactive, co-creative and media-rich, without requiring specialist coding skills.",
     date: 2018,
-    roles: ['Design, Development'],
+    roles: ['Design','Development'],
     credits:  [
                 {name: 'Dr Cherie Lacey', role: 'Supervision'},
                 {name: 'Dr Sydney Shep', role: 'Supervision'},
@@ -29,7 +29,7 @@ const projects = {
   vuw: {
     title: 'VUW',
     subtitle: 'School of Design Website',
-    description: "Website design for Victoria University of Wellington's School of Design",
+    description: "The design process for Victoria University of Wellington’s new School of Design website began in 2014. After much research and deliberation, the designs for this site were finally created in 2017. The new site looks to provide the school with a portfolio, showcasing student work in a range of disciplines catered for by the various majors and masters programmes.",
     date: 2017,
     roles: ['Design'],
     credits:  [
@@ -52,7 +52,7 @@ const projects = {
   vertice: {
     title: 'Vertice',
     subtitle: '3D Archive Interface',
-    description: 'Vertice is a three-dimensional archive interface using game mechanics to explore how three-dimensional spatiality within cultural institution practice may enhance interaction between users and artifacts',
+    description: 'Vertice is a platform that enables cultural institutions and their visitors to collate and interact with digitised and born-digital 3D objects. Vertice was developed using the gaming engine Unity to provide functionality that supports the purposeful arrangement, contextualisation, and presentation of digital artefacts.',
     date: 2016,
     roles: ['Frontend Development', 'Design', 'Research'],
     credits:  [
@@ -80,9 +80,9 @@ const projects = {
   vwm: {
     title: 'VMW',
     subtitle: 'Psychology Test Web App',
-    description: 'Psychology web app designed to measure individual differences in working memory.',
+    description: 'Visual Working Memory is a test designed to measure individual differences in working memory. Working memory is the ability to remember information for long enough to use it. This is a core function of the human information processing system.',
     date: 2017,
-    roles: ['Design, Development'],
+    roles: ['Design', 'Development'],
     credits:  [
                 {name: 'Jonathan Peters', role: 'Research & Pilot Study'}
               ],
@@ -106,7 +106,7 @@ const projects = {
     subtitle: 'Audio-Responsive Website',
     description: 'Audio-visual website design and development for New Zealand musician, Indi.',
     date: 2017,
-    roles: ['Design, Development'],
+    roles: ['Design', 'Development'],
     tools: ['Web Audio API', 'Canvas API', 'Sketch App'],
     social: [
       { host: 'Github',

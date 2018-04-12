@@ -20,25 +20,46 @@
   }
 }
 
-.project__sectionHeader{
-  font-family: $type-kumar;
-  font-size: $l-size;
-  margin-bottom: 1rem;
+.project__infoContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .project__section{
-  margin: 50px 0;
+  margin: 0 20px;
   text-align: center;
 
   ul{
     list-style: none;
     padding: 0;
   }
+  li{
+    margin-bottom: 10px;
+  }
+  &.overview{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 30px auto;
+    width: 100%;
+  }
+  // &.social{
+  //   width: 100%;
+  // }
+}
+
+.project__divider{
+  border: none;
+  border-bottom: 1px dotted $body-color;
+  width: 100%;
 }
 
 .project__img{
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 90%;
   z-index: -1;
 }
