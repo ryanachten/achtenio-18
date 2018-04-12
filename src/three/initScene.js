@@ -3,7 +3,6 @@ import $ from 'jquery';
 import stats from 'stats.js';
 
 export const setupStatus = () => {
-  console.log('setup status');
   const status = stats();
   status.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
   status.dom.id = "stats";
@@ -34,8 +33,8 @@ export const lights = {
 }
 
 export const renderer = (width, height) => {
-  const render = new THREE.WebGLRenderer({ antialias: true });
-  render.setClearColor('#FFF7F0');
+  const render = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  render.setClearColor(0x000000, 0); //'#FFF7F0'
   render.setSize(width, height);
   return render;
 }
