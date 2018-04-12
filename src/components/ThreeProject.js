@@ -9,6 +9,7 @@ class ThreeProject extends React.Component {
     super(props)
 
     this.animate = this.animate.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
 
     this.state = {
       showStats: false,
@@ -27,7 +28,8 @@ class ThreeProject extends React.Component {
   componentDidMount() {
 
     this.setupThree();
-    window.addEventListener("resize", this.updateDimensions.bind(this));
+
+    window.addEventListener("resize", this.updateDimensions);
     this.updateDimensions();
   }
 
@@ -37,6 +39,7 @@ class ThreeProject extends React.Component {
       const statsCanvas = document.getElementById('stats');
       statsCanvas.remove();
     }
+    window.removeEventListener("resize", this.updateDimensions);
 
     // Prevent duplicate imgObjects being added to the scene
     const existingImgObj = scene.children.filter((obj) => obj.name === 'imgObj')[0];
@@ -118,6 +121,12 @@ class ThreeProject extends React.Component {
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize( canvasWidth, canvasHeight );
+
+    if (this.imgObj) {
+      console.log(this.props.meshScale);
+      this.imgObj.scale.set(this.props.meshScale, this.props.meshScale, this.props.meshScale)
+    }
+
   }
 
   materialTransition(){
@@ -170,6 +179,9 @@ class ThreeProject extends React.Component {
     // Only apply transition if multiple projects are needed
     if (this.state.transition) {
       this.materialTransition();
+    }
+    else{
+      this.imgObj.children[0].material = this.materials[this.props.currentProject]
     }
 
     const texture = this.imgObj.children[0].material.map;
