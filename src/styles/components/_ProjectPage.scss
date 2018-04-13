@@ -1,3 +1,7 @@
+#svgFilter{
+  display: none;
+}
+
 .project__splashContainer{
   align-items: center;
   display: flex;
@@ -46,9 +50,6 @@
     margin: 30px auto;
     width: 100%;
   }
-  // &.social{
-  //   width: 100%;
-  // }
 }
 
 .project__divider{
@@ -62,6 +63,10 @@
   margin: 20px auto;
   width: 90%;
   z-index: -1;
+  &.filter{
+    -webkit-filter: url(#svgFilter);
+    filter: url(#svgFilter);
+  }
 }
 
 .project__socialItem{
