@@ -20,11 +20,15 @@ class ProjectInfo extends React.Component{
   updateFilter(){
     this.frameId = window.requestAnimationFrame(this.updateFilter);
     // const turb = $('feTurbulence')[0];
-    // const displace = $('feDisplacementMap')[0].scale;
+    // const displace = $('feDisplacementMap')[0].scale.baseVal;
     // console.log(displace);
-    $('feDisplacementMap')[0].scale.baseVal += 0.5;
-    // $('feTurbulence')[0].baseFrequencyX.baseVal += 0.01;
-    // console.log(displace);
+    $('feDisplacementMap')[0].scale.baseVal += 0.2;
+    if ($('feDisplacementMap')[0].scale.baseVal > 500) {
+      window.cancelAnimationFrame(this.frameId);
+    }
+
+    // $('feTurbulence')[0].numOctaves.baseVal += 0.01;
+    // console.log($('feTurbulence')[0].numOctaves.baseVal);
   }
 
   cancelFilter({target}){
@@ -51,17 +55,18 @@ class ProjectInfo extends React.Component{
 
     return(
       <div>
-        <svg>
+        <svg id="svgFilterContainer">
           <defs>
             <filter id="svgFilter">
               <feTurbulence
                 type="turbulence" baseFrequency="0.01"
                 numOctaves="1" result="turbulence"/>
               <feDisplacementMap
-                in="SourceGraphic" in2="TURBULENCE" scale="0" />
+                in="SourceGraphic" in2="TURBULENCE" scale="0.01" />
             </filter>
           </defs>
         </svg>
+
         <section className="project__splashContainer">
           <div className="project__splashbox">
             <div><h1>{title}</h1></div>

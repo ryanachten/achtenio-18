@@ -1,4 +1,4 @@
-#svgFilter{
+#svgFilterContainer{
   display: none;
 }
 
@@ -59,10 +59,11 @@
 }
 
 .project__img{
+  clip-path: inset(0px 0px 0px 0px);
   display: block;
   margin: 20px auto;
   width: 90%;
-  z-index: -1;
+  
   &.filter{
     -webkit-filter: url(#svgFilter);
     filter: url(#svgFilter);
@@ -85,14 +86,5 @@
   }
   &.github{
     background-image: url('/img/icons/social/github.svg');
-  }
-}
-
-@keyframes img-roll {
-  0% {
-    transform: rotate3d(1,0,1, 0deg);
-  }
-  100% {
-    transform: rotate3d(1,0,1, 360deg);
   }
 }
