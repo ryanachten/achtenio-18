@@ -59,11 +59,10 @@
 }
 
 .project__img{
-  clip-path: inset(0px 0px 0px 0px);
   display: block;
   margin: 20px auto;
   width: 90%;
-  
+
   &.filter{
     -webkit-filter: url(#svgFilter);
     filter: url(#svgFilter);

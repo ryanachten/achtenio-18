@@ -19,16 +19,10 @@ class ProjectInfo extends React.Component{
 
   updateFilter(){
     this.frameId = window.requestAnimationFrame(this.updateFilter);
-    // const turb = $('feTurbulence')[0];
-    // const displace = $('feDisplacementMap')[0].scale.baseVal;
-    // console.log(displace);
     $('feDisplacementMap')[0].scale.baseVal += 0.2;
     if ($('feDisplacementMap')[0].scale.baseVal > 500) {
       window.cancelAnimationFrame(this.frameId);
     }
-
-    // $('feTurbulence')[0].numOctaves.baseVal += 0.01;
-    // console.log($('feTurbulence')[0].numOctaves.baseVal);
   }
 
   cancelFilter({target}){
@@ -60,9 +54,9 @@ class ProjectInfo extends React.Component{
             <filter id="svgFilter">
               <feTurbulence
                 type="fractalNoise" baseFrequency="0.01"
-                numOctaves="1" result="turbulence"/>
+                numOctaves="2" result="turbulence"/>
               <feDisplacementMap
-                in="SourceGraphic" in2="TURBULENCE" scale="0.01" />
+                in="SourceGraphic" in2="turbulence" scale="0.01" />
             </filter>
           </defs>
         </svg>
