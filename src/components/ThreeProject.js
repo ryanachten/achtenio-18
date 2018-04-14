@@ -20,8 +20,8 @@ class ThreeProject extends React.Component {
       transitionOut: false,
       transitionIn: false,
       opacity: 1,
-      canvasWidth: $(window).width(),
-      canvasHeight: $(window).height()*0.8
+      canvasWidth: undefined,
+      canvasHeight: undefined
     }
   }
 
@@ -123,7 +123,6 @@ class ThreeProject extends React.Component {
     this.renderer.setSize( canvasWidth, canvasHeight );
 
     if (this.imgObj) {
-      console.log(this.props.meshScale);
       this.imgObj.scale.set(this.props.meshScale, this.props.meshScale, this.props.meshScale)
     }
 
