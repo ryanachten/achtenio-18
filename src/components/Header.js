@@ -6,7 +6,7 @@ const Header = () => (
   <header className="topNav--container">
     <NavLink className="logotype topNav--link" to="/" activeClassName="is-active" exact={true}>r/a</NavLink>
     <div className="topNav--linkContainer">
-      <NavLink className="topNav--link" to="/work" activeClassName="is-active">Work</NavLink>
+      <NavLink exact className="topNav--link" to="/work" activeClassName="is-active">Work</NavLink>
       <NavLink className="topNav--link" to="/about" activeClassName="is-active">About</NavLink>
       <NavLink className="topNav--link" to="/cv" activeClassName="is-active">CV</NavLink>
     </div>
