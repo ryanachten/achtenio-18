@@ -13,7 +13,13 @@
   width: 40vw;
 }
 .thumbnail__img{
+  clip-path: inset(0px 0px 0px 0px);
   width: 100%;
+
+  &.filter{
+    -webkit-filter: url(#svgFilter);
+    filter: url(#svgFilter);
+  }
 }
 .thumbnail__title{
   margin-bottom: 10px;

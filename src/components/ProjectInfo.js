@@ -59,7 +59,7 @@ class ProjectInfo extends React.Component{
           <defs>
             <filter id="svgFilter">
               <feTurbulence
-                type="turbulence" baseFrequency="0.01"
+                type="fractalNoise" baseFrequency="0.01"
                 numOctaves="1" result="turbulence"/>
               <feDisplacementMap
                 in="SourceGraphic" in2="TURBULENCE" scale="0.01" />
