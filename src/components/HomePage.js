@@ -60,7 +60,14 @@ class HomePage extends React.Component{
 
     return(
       <div>
-        <ThreeProject meshScale={10} textures={this.state.textures} currentProject={this.state.id} transition={true} />
+        <Link to={`/work/${this.state.id}`}>
+          <ThreeProject 
+            meshScale={10}
+            textures={this.state.textures}
+            currentProject={this.state.id}
+            transition={true}
+          />
+        </Link>
         <section className="homeview--projectInfo">
           <p className="homeview--projectIndex">
             {(this.state.currentIndex +1) + '/' + this.state.ids.length}
