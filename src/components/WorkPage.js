@@ -33,6 +33,10 @@ class WorkPage extends React.Component{
     $('feDisplacementMap')[0].scale.baseVal = 0;
   }
 
+  componentWillUnmount = () => {
+    window.cancelAnimationFrame(this.frameId);
+  };
+
   render = () => {
 
     return (
