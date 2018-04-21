@@ -7,10 +7,14 @@
 }
 .homeview--projectIndex{
   font-family: $type-kumar;
-  font-size: 2.4rem;
+  font-size: 2rem;
+  letter-spacing: 3px;
 }
 .homeview--projectTitle{
-  margin: 40px 0 20px 0;
+  margin: 40px 0 10px 0;
+}
+.homeview--projectSubtitle{
+  margin-bottom: 30px;
 }
 .homeview--projectDate{
   font-family: $type-sans;

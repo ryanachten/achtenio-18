@@ -61,7 +61,7 @@ class HomePage extends React.Component{
     return(
       <div>
         <Link to={`/work/${this.state.id}`}>
-          <ThreeProject 
+          <ThreeProject
             meshScale={10}
             textures={this.state.textures}
             currentProject={this.state.id}
