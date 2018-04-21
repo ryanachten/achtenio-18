@@ -5,7 +5,7 @@ import projects from '../store';
 import ThreeProject from './ThreeProject';
 
 let projectTransition;
-const defaultProject = 'hiko';
+const defaultProject = 'oscil';
 
 class HomePage extends React.Component{
   constructor(props){

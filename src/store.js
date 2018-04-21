@@ -1,4 +1,25 @@
 const projects = {
+  oscil: {
+    title: 'Oscil',
+    subtitle: 'Audio-Visual Web App',
+    description: "Oscil is an audio-visual web application which takes audio information via a user’s microphone input and uses the resulting waveform to drive various visualisations. These visualisations are intended to be used in both a performance context or simply to accompany leisurely playing of music.",
+    date: 2018,
+    roles: ['Design','Development'],
+    tools: ['React', 'Redux', 'Babel', 'Webpack', 'Three.js', 'p5.js', 'Canvas API', 'Web Audio API', 'Sketch App', 'Maxon Cinema 4D'],
+    social: [
+      { host: 'GitHub',
+      url: 'https://github.com/ryanachten/Oscil' },
+      { host: 'Behance',
+      url: 'https://www.behance.net/ryanachten' }
+    ],
+    textureImg: 'oscil.png',
+    thumbImg: 'oscil.png',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c15dd62469047.5a913670eeab9.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/98636b62469047.5a9138de43763.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e3242362469047.5a913c32d3766.jpg'
+    ]
+  },
   hiko: {
     title: 'Hiko',
     subtitle: 'Digital Publishing Platform',
