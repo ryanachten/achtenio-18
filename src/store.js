@@ -14,6 +14,7 @@ const projects = {
     ],
     textureImg: 'oscil.png',
     thumbImg: 'oscil.png',
+    videoDocUrl: 'https://vimeo.com/265857715',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e466c64019463.5ada9e2d69c5d.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/6ef6c264019463.5ad99b8e47190.jpg',
@@ -96,6 +97,7 @@ const projects = {
     ],
     textureImg: 'vertice.png',
     thumbImg: 'vertice.png',
+    videoDocUrl: 'https://vimeo.com/188456099',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee5cbd60149489.5a3e1aab93972.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png',
@@ -120,6 +122,7 @@ const projects = {
     ],
     textureImg: 'vwm.png',
     thumbImg: 'vwm.png',
+    videoDocUrl: 'https://vimeo.com/263614649',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/cd21ef64144681.5ac95f806b35b.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/186a6864144681.5ac94db51194d.jpg',
@@ -141,6 +144,7 @@ const projects = {
     ],
     textureImg: 'indi.png',
     thumbImg: 'indi.png',
+    videoDocUrl: 'https://vimeo.com/258438578',
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c7fdff62797437.5a9f9c3dc3034.gif',
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/897f1562797437.5a9fa38b23c07.gif',

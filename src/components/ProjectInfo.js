@@ -1,7 +1,8 @@
 import React from 'react';
 import uuid from 'uuid';
 import $ from 'jquery';
-import SvgFilter from './SvgFilter'
+import SvgFilter from './SvgFilter';
+import ReactPlayer from 'react-player';
 
 class ProjectInfo extends React.Component{
 
@@ -45,11 +46,13 @@ class ProjectInfo extends React.Component{
       tools,
       social,
       textureImg,
+      videoDocUrl,
       images
     } = this.props.project;
 
     return(
       <div>
+
         <SvgFilter />
 
         <section className="project__splashContainer">
@@ -110,6 +113,14 @@ class ProjectInfo extends React.Component{
 
         </div>
 
+        {videoDocUrl && (
+          <div className="vimeo__wrapper">
+            <ReactPlayer
+            url={videoDocUrl}
+            width='100%'
+            height='100%'
+          /></div>
+        )}
 
         { images.map( (img) => (
 
