@@ -10,14 +10,18 @@ const projects = {
       { host: 'GitHub',
       url: 'https://github.com/ryanachten/Oscil' },
       { host: 'Behance',
-      url: 'https://www.behance.net/ryanachten' }
+      url: 'https://www.behance.net/gallery/64019463/Oscil-Audio-Visual-Web-App' }
     ],
     textureImg: 'oscil.png',
     thumbImg: 'oscil.png',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c15dd62469047.5a913670eeab9.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/98636b62469047.5a9138de43763.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e3242362469047.5a913c32d3766.jpg'
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e466c64019463.5ada9e2d69c5d.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/6ef6c264019463.5ad99b8e47190.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/23810d64019463.5adab34341732.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/0a282164019463.5ad9a680de0fc.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/12005264019463.5ad99b8e47c21.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/fdf89d64019463.5ad99b8e4940a.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/d422a964019463.5adab2b98f9bb.jpg'
     ]
   },
   hiko: {
