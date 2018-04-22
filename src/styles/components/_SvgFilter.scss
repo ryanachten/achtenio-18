@@ -1,0 +1,8 @@
+#svgFilterContainer{
+  display: none;
+}
+
+.svgFilterTarget{
+  -webkit-filter: url(#svgFilter);
+  filter: url(#svgFilter);
+}

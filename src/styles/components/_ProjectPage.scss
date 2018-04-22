@@ -1,7 +1,3 @@
-#svgFilterContainer{
-  display: none;
-}
-
 .project__splashContainer{
   align-items: center;
   display: flex;
@@ -62,11 +58,6 @@
   display: block;
   margin: 20px auto;
   width: 90%;
-
-  &.filter{
-    -webkit-filter: url(#svgFilter);
-    filter: url(#svgFilter);
-  }
 }
 
 .project__socialItem{

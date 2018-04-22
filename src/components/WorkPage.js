@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router-dom';
 import projects from '../store';
+import SvgFilter from './SvgFilter'
 
 class WorkPage extends React.Component{
 
@@ -14,7 +15,7 @@ class WorkPage extends React.Component{
   }
 
   startFilter(e){
-    $(e.target).addClass('filter');
+    $(e.target).addClass('svgFilterTarget');
     this.updateFilter();
   };
 
@@ -28,7 +29,7 @@ class WorkPage extends React.Component{
   }
 
   cancelFilter({target}){
-    $(target).removeClass('filter');
+    $(target).removeClass('svgFilterTarget');
     window.cancelAnimationFrame(this.frameId);
     $('feDisplacementMap')[0].scale.baseVal = 0;
   }
@@ -42,17 +43,7 @@ class WorkPage extends React.Component{
     return (
       <div className="thumbnail__container">
 
-        <svg id="svgFilterContainer">
-          <defs>
-            <filter id="svgFilter">
-              <feTurbulence
-                type="fractalNoise" baseFrequency="0.01"
-                numOctaves="2" result="turbulence"/>
-              <feDisplacementMap
-                in="SourceGraphic" in2="turbulence" scale="0.01" />
-            </filter>
-          </defs>
-        </svg>
+        <SvgFilter />
 
         { Object.keys(projects).map( ( key ) => (
           <div key={key}>

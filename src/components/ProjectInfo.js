@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import $ from 'jquery';
+import SvgFilter from './SvgFilter'
 
 class ProjectInfo extends React.Component{
 
@@ -13,7 +14,7 @@ class ProjectInfo extends React.Component{
   }
 
   startFilter({target}){
-    $(target).addClass('filter');
+    $(target).addClass('svgFilterTarget');
     this.updateFilter();
   };
 
@@ -26,7 +27,7 @@ class ProjectInfo extends React.Component{
   }
 
   cancelFilter({target}){
-    $(target).removeClass('filter');
+    $(target).removeClass('svgFilterTarget');
     window.cancelAnimationFrame(this.frameId);
     $('feDisplacementMap')[0].scale.baseVal = 0;
   }
@@ -49,17 +50,7 @@ class ProjectInfo extends React.Component{
 
     return(
       <div>
-        <svg id="svgFilterContainer">
-          <defs>
-            <filter id="svgFilter">
-              <feTurbulence
-                type="fractalNoise" baseFrequency="0.01"
-                numOctaves="2" result="turbulence"/>
-              <feDisplacementMap
-                in="SourceGraphic" in2="turbulence" scale="0.01" />
-            </filter>
-          </defs>
-        </svg>
+        <SvgFilter />
 
         <section className="project__splashContainer">
           <div className="project__splashbox">

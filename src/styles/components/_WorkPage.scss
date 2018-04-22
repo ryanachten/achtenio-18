@@ -7,18 +7,13 @@
 .thumbnail__item{
   display: block;
   margin: 30px;
-  max-width: 1000px;
+  max-width: 500px;
   min-width: 200px;
   text-align: center;
   width: 40vw;
 }
 .thumbnail__img{
   width: 100%;
-
-  &.filter{
-    -webkit-filter: url(#svgFilter);
-    filter: url(#svgFilter);
-  }
 }
 .thumbnail__title{
   margin-bottom: 10px;
