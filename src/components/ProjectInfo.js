@@ -116,10 +116,18 @@ class ProjectInfo extends React.Component{
         {videoDocUrl && (
           <div className="vimeo__wrapper">
             <ReactPlayer
-            url={videoDocUrl}
-            width='100%'
-            height='100%'
-          /></div>
+              className="vimeo__player"
+              url={videoDocUrl}
+              width='100%'
+              height='100%'
+              onReady={() => {
+                $('.vimeo__loadingScreen').hide();
+                $('.vimeo__player').fadeIn();
+            }}/>
+            <div className="vimeo__loadingScreen">
+              <h2>Video Loading...</h2>
+            </div>
+          </div>
         )}
 
         { images.map( (img) => (

@@ -79,8 +79,23 @@
   }
 }
 
+.vimeo__player{
+  display: none;
+}
+
 .vimeo__wrapper{
   height: 40vw;
+  margin: 30px auto 50px auto;
+  max-height: 600px;
+  max-width: 1200px;
+  width: 80vw;
+}
+.vimeo__loadingScreen{
+  align-items: center;
+  background-color: $bg-color;
+  display: flex;
+  height: 40vw;
+  justify-content: center;
   margin: 30px auto 50px auto;
   max-height: 600px;
   max-width: 1200px;
