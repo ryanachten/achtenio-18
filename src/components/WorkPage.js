@@ -34,7 +34,7 @@ class WorkPage extends React.Component{
     $('feDisplacementMap')[0].scale.baseVal = 0;
   }
 
-  componentWillUnmount = () => {
+  componentWillUnmount(){
     window.cancelAnimationFrame(this.frameId);
   };
 
@@ -46,12 +46,17 @@ class WorkPage extends React.Component{
         <SvgFilter />
 
         { Object.keys(projects).map( ( key ) => (
-          <div key={key}>
-            <Link className="thumbnail__item" to={`/work/${key}`}>
+          <div className="thumbnail__item" key={key}>
+            <Link to={`/work/${key}`}>
               <img className="thumbnail__img"
                 src={`/img/thumbs/${projects[key].thumbImg}`}
                 onMouseEnter={this.startFilter}
-                onMouseLeave={this.cancelFilter}></img>
+                onMouseLeave={this.cancelFilter}
+                onLoad={(e) => {
+                  // Fade current image in once loaded
+                  const containerDiv = $(e.target).parents('.thumbnail__item')[0];
+                  $(containerDiv).fadeIn();
+                }}></img>
               <h1 className="thumbnail__title">{projects[key].title}</h1>
               <h2>{projects[key].subtitle}</h2>
             </Link>
