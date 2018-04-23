@@ -14,6 +14,14 @@ class WorkPage extends React.Component{
     this.updateFilter = this.updateFilter.bind(this);
   }
 
+  componentWillUnmount(){
+    window.cancelAnimationFrame(this.frameId);
+  };
+
+  componentDidMount(){
+    this.loadedImgContainer = {};
+  }
+
   startFilter(e){
     $(e.target).addClass('svgFilterTarget');
     this.updateFilter();
@@ -34,9 +42,21 @@ class WorkPage extends React.Component{
     $('feDisplacementMap')[0].scale.baseVal = 0;
   }
 
-  componentWillUnmount(){
-    window.cancelAnimationFrame(this.frameId);
-  };
+  fadeInImages(){
+    const projectKeys = Object.keys(projects);
+    let currentIndex = 0;
+
+    this.fadeInterval = window.setInterval( () => {
+      const currentKey = projectKeys[currentIndex];
+      $(this.loadedImgContainer[currentKey]).fadeIn();
+      currentIndex++;
+
+      // Once all containers have faded in, remove interval
+      if (currentIndex === projectKeys.length) {
+        window.clearInterval(this.fadeInterval);
+      }
+    }, 1000);
+  }
 
   render = () => {
 
@@ -53,9 +73,16 @@ class WorkPage extends React.Component{
                 onMouseEnter={this.startFilter}
                 onMouseLeave={this.cancelFilter}
                 onLoad={(e) => {
-                  // Fade current image in once loaded
+                  // store current img's container for fade in
                   const containerDiv = $(e.target).parents('.thumbnail__item')[0];
-                  $(containerDiv).fadeIn();
+                  this.loadedImgContainer[key] = containerDiv;
+
+                  // If all images are loaded, start fade in process
+                  if (
+                    Object.keys(this.loadedImgContainer).length ===
+                    Object.keys(projects).length) {
+                      this.fadeInImages();
+                  }
                 }}></img>
               <h1 className="thumbnail__title">{projects[key].title}</h1>
               <h2>{projects[key].subtitle}</h2>
