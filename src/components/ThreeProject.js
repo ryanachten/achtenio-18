@@ -66,33 +66,31 @@ class ThreeProject extends React.Component {
     const height = this.getCanvasHeight();
 
     this.scene = scene;
-
     this.camera = camera(width, height);
-
     scene.add(lights.ambient, lights.point);
-
     this.renderer = renderer(width, height);
 
-    const parentRef = this;
-    loadTextures(this.state.textures, function(loadedTextures){
-      createMaterials(loadedTextures, function(loadedMaterials){
-        createObject(
-          parentRef.state.meshScale,
-          loadedMaterials,
-          parentRef.props.currentProject,
-          function(imgObj){
-
+    // Load the textures
+    loadTextures(this.state.textures).then(
+      // Create the materials with loaded textures
+      (loadedTextures) => createMaterials(loadedTextures).then(
+        // Create the imgObject with loaded materials
+        (materials) => createObject(
+          { meshScale: this.state.meshScale,
+            materials: materials,
+            currentProject: this.props.currentProject}).then(
+          (imgObj) => {
+            // Add dependencies to scene and scope, start animation
             scene.add(imgObj);
-            parentRef.imgObj = imgObj;
+            this.imgObj = imgObj;
+            this.materials = materials;
+            this.mount.appendChild(this.renderer.domElement);
+            $('#three-canvas').fadeIn(1000);
+            this.start();
 
-            parentRef.materials = loadedMaterials;
-
-            parentRef.renderer.domElement.id = 'three-canvas';
-            parentRef.mount.appendChild(parentRef.renderer.domElement);
-            parentRef.start();
-        });
-      });
-    });
+          })
+      ));
+    ;
   }
 
   getCanvasHeight(){
@@ -204,7 +202,7 @@ class ThreeProject extends React.Component {
     return (
       <div
         style={{  width: this.state.canvasWidth,
-                  height: this.state.canvasHeight }}
+                  height: this.state.canvasHeight  }}
         ref={(mount) => { this.mount = mount }}
       />
     )
