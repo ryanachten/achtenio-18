@@ -12,7 +12,7 @@ class AboutPage extends React.Component{
 
   componentDidMount(){
     this.delta = 0.0;
-    this.max = 200;
+    this.max = 100;
     this.speed = 0.02;
     this.updateFilter();
   }
