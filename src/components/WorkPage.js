@@ -29,7 +29,7 @@ class WorkPage extends React.Component{
 
   updateFilter(){
     this.frameId = window.requestAnimationFrame(this.updateFilter);
-    $('feDisplacementMap')[0].scale.baseVal += 0.2;
+    $('feDisplacementMap')[0].scale.baseVal += 0.5;
 
     if ($('feDisplacementMap')[0].scale.baseVal > 500) {
       window.cancelAnimationFrame(this.frameId);
@@ -55,7 +55,7 @@ class WorkPage extends React.Component{
       if (currentIndex === projectKeys.length) {
         window.clearInterval(this.fadeInterval);
       }
-    }, 1000);
+    }, 700);
   }
 
   render = () => {
