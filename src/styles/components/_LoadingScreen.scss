@@ -12,6 +12,20 @@
 }
 
 .loading__logo{
+  animation: spin 3s reverse linear infinite;
   width: 80vw;
-  max-width: 400px;
+  margin: 70px;
+  max-width: 300px;
+}
+
+.loading__loader {
+  border-top: 2px dotted $body-color;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
