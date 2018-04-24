@@ -21,7 +21,7 @@
 .loading__loader {
   border-top: 2px dotted $body-color;
   border-radius: 50%;
-  display: inline-block;
+  display: none;
   animation: spin 3s linear infinite;
 }
 

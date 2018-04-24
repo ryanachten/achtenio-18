@@ -92,7 +92,7 @@ class ThreeProject extends React.Component {
               $('.ProjectPage').show();
               this.start();
               $('.LoadingScreen').fadeOut(1000);
-            }, 2000);
+            }, 1000);
 
           })
       ));
