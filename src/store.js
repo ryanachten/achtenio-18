@@ -12,6 +12,10 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/64019463/Oscil-Audio-Visual-Web-App' }
     ],
+    liveSite: {
+      label: 'oscil.herokuapp.com',
+      url: 'https://oscil.herokuapp.com/'
+    },
     textureImg: 'oscil.png',
     thumbImg: 'oscil.png',
     videoDocUrl: 'https://vimeo.com/265857715',
@@ -44,6 +48,10 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/62469047/Hiko-Digital-Writing-Platform' }
     ],
+    liveSite: {
+      label: 'Testing directory',
+      url: 'http://13.54.24.220/'
+    },
     textureImg: 'hiko.png',
     thumbImg: 'hiko.png',
     images: [
@@ -80,13 +88,13 @@ const projects = {
     subtitle: '3D Archive Interface',
     description: 'Vertice is a platform that enables cultural institutions and their visitors to collate and interact with digitised and born-digital 3D objects. Vertice was developed using the gaming engine Unity to provide functionality that supports the purposeful arrangement, contextualisation, and presentation of digital artefacts.',
     date: 2016,
-    roles: ['Frontend Development', 'Design', 'Research'],
+    roles: ['Unity Development', 'Design', 'Research'],
     credits:  [
-                {name: 'Tim Bathgate', role: 'Backend Development'},
+                {name: 'Tim Bathgate', role: 'Backend & Web Development'},
                 {name: 'Walter Langelaar', role: 'Research Supervision'},
                 {name: 'Michael Elwood-Smith', role: 'Mentorship'},
               ],
-    tools: ['Unity 3D', 'Pixologic Zbrush', 'MeshLab', 'Agisoft Photoscan', 'JavaScript'],
+    tools: ['Unity 3D', 'C#', 'Pixologic Zbrush', 'MeshLab', 'Agisoft Photoscan'],
     social: [
       { host: 'Github',
       url: 'https://github.com/ryanachten/Vertice' },
@@ -95,6 +103,10 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/44228025/Vertice-3D-Archive-Interface' },
     ],
+    liveSite: {
+      label: 'vertice.co.nz',
+      url: 'http://vertice.co.nz/'
+    },
     textureImg: 'vertice.png',
     thumbImg: 'vertice.png',
     videoDocUrl: 'https://vimeo.com/188456099',

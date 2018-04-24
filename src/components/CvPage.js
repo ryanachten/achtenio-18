@@ -60,6 +60,7 @@ const CvPage = () => {
         <div className="cv__item">
           <h2>Misc</h2>
           <ul>
+            <li>Bash</li>
             <li>Arduino</li>
             <li>Pure Data</li>
             <li>Unity3D</li>

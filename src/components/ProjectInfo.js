@@ -40,11 +40,11 @@ class ProjectInfo extends React.Component{
       subtitle,
       date,
       description,
-      headerImg,
       roles,
-      credits = undefined,
+      credits,
       tools,
       social,
+      liveSite,
       textureImg,
       videoDocUrl,
       images
@@ -85,7 +85,7 @@ class ProjectInfo extends React.Component{
               <h2 className="project__sectionHeader">Credits</h2>
               <ul>
                 { credits.map( (credit) => (
-                  <li key={uuid()}>{credit.name} ~ {credit.role}</li>
+                  <li key={uuid()}>{credit.name} ~ <em>{credit.role}</em></li>
                 )) }
               </ul>
             </section>
@@ -105,11 +105,18 @@ class ProjectInfo extends React.Component{
             <ul>
               {social.map( (site)=>(
                 <li className="project__socialItem" key={uuid()}>
-                  <a className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
+                  <a target="_blank" className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
                 </li>
               ))}
             </ul>
           </section>
+
+          {liveSite && (
+            <section className="project__section liveSite">
+              <h2 className="project__sectionHeader">Live Site</h2>
+              <a target="_blank" href={liveSite.url}>{liveSite.label}</a>
+            </section>
+          )}
 
         </div>
 
@@ -145,7 +152,7 @@ class ProjectInfo extends React.Component{
           <ul>
             {social.map( (site)=>(
               <li className="project__socialItem" key={uuid()}>
-                <a className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
+                <a target="_blank" className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
               </li>
             ))}
           </ul>

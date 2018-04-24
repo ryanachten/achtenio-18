@@ -8,14 +8,12 @@ import AboutPage from '../components/AboutPage';
 import CvPage from '../components/CvPage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
-// import LoadingScreen from '../components/LoadingScreen';
 
 
 const AppRouter = () => (
   <BrowserRouter>
     <div id="router--container">
       <Header />
-      {/* <LoadingScreen /> */}
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/work" component={WorkPage} exact={true} />
