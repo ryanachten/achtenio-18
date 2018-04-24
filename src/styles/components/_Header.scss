@@ -15,7 +15,6 @@
 .topNav--linkContainer.topNav--open{
   display: flex;
   justify-content: center;
-  // width: 100%;
 }
 
 .topNav--link{
@@ -33,11 +32,10 @@
 }
 
 .topNav--menuButton{
-  background-color: transparent;
-  background-image: url('../img/icons/menu.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background: none;
   border: none;
+  color: $body-color;
+  font-size: 30px;
   height: 30px;
   width: 30px;
   padding: 0px;
@@ -45,9 +43,6 @@
   &:focus{
     outline: none;
   }
-}
-.topNav--menuButton.topNav--open{
-  background-image: url('../img/icons/close.svg');
 }
 
 @media only screen and (max-width: 450px) {

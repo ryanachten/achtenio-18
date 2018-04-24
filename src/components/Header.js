@@ -10,7 +10,7 @@ const Header = () => (
       <NavLink className="topNav--link" to="/about" activeClassName="is-active">About</NavLink>
       <NavLink className="topNav--link" to="/cv" activeClassName="is-active">CV</NavLink>
     </div>
-    <button className="topNav--menuButton" onClick={toggleNav}></button>
+    <button className="topNav--menuButton fi-thumbnails" onClick={toggleNav}></button>
 
 
   </header>
@@ -18,7 +18,7 @@ const Header = () => (
 
 const toggleNav = () => {
   $('.topNav--linkContainer').toggleClass('topNav--open');
-  $('.topNav--menuButton').toggleClass('topNav--open');
+  $('.topNav--menuButton').toggleClass('fi-x');
 };
 
 export default Header;

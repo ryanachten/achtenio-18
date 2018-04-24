@@ -43,15 +43,15 @@ class AboutPage extends React.Component{
         </p>
         <ul className="about__socialLinks">
           <li><a href="https://www.behance.net/ryanachten">
-            <img src="/img/icons/social/behance.svg"></img></a></li>
+            <i className="fi-social-behance"></i></a></li>
           <li><a href="https://github.com/ryanachten">
-            <img src="/img/icons/social/github.svg"></img></a></li>
+            <i className="fi-social-github"></i></a></li>
           <li><a href="https://www.linkedin.com/in/ryanachten/">
-            <img src="/img/icons/social/vimeo.svg"></img></a></li>
+            <i className="fi-social-linkedin"></i></a></li>
           <li><a href="https://vimeo.com/ryanachten">
-            <img src="/img/icons/social/linkedin.svg"></img></a></li>
+            <i className="fi-social-vimeo"></i></a></li>
           <li><a href="mailto:ryanachten@gmail.com">
-            <img src="/img/icons/social/mail.svg"></img></a></li>
+            <i className="fi-mail"></i></a></li>
         </ul>
       </div>
     );

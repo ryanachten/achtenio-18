@@ -105,7 +105,9 @@ class ProjectInfo extends React.Component{
             <ul>
               {social.map( (site)=>(
                 <li className="project__socialItem" key={uuid()}>
-                  <a target="_blank" className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
+                  <a target="_blank" className={`project__socialIcon`} href={site.url}>
+                    <i className={`fi-social-${site.host.toLowerCase()}`}></i>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -114,7 +116,9 @@ class ProjectInfo extends React.Component{
           {liveSite && (
             <section className="project__section liveSite">
               <h2 className="project__sectionHeader">Live Site</h2>
-              <a target="_blank" href={liveSite.url}>{liveSite.label}</a>
+              <a target="_blank" href={liveSite.url}>{liveSite.label}
+                <i className="fi-link"></i>
+              </a>
             </section>
           )}
 
@@ -152,7 +156,9 @@ class ProjectInfo extends React.Component{
           <ul>
             {social.map( (site)=>(
               <li className="project__socialItem" key={uuid()}>
-                <a target="_blank" className={`project__socialIcon ${site.host.toLowerCase()}`} href={site.url}></a>
+                <a target="_blank" className={`project__socialIcon`} href={site.url}>
+                  <i className={`fi-social-${site.host.toLowerCase()}`}></i>
+                </a>
               </li>
             ))}
           </ul>
