@@ -8,7 +8,7 @@ body{
 }
 
 #router--container{
-  background-image: radial-gradient(50% 150%, #FFFCF9 0, #e6dbd1 100%);
+  background-image: $bg-grad;
   display: flex;
   flex-flow: row wrap;
   min-height: 100vh;

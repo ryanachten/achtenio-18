@@ -26,7 +26,8 @@ class ThreeProject extends React.Component {
   }
 
   componentDidMount() {
-
+    $('.LoadingScreen').show();
+    $('.ProjectPage').hide();
     this.setupThree();
 
     window.addEventListener("resize", this.updateDimensions);
@@ -85,8 +86,12 @@ class ThreeProject extends React.Component {
             this.imgObj = imgObj;
             this.materials = materials;
             this.mount.appendChild(this.renderer.domElement);
-            $('#three-canvas').fadeIn(1000);
-            this.start();
+            // $('#three-canvas').fadeIn(1000);
+            window.setTimeout( () => {
+              $('.ProjectPage').show();
+              this.start();
+              $('.LoadingScreen').fadeOut(1000);
+            }, 2000);
 
           })
       ));

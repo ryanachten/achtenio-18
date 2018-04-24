@@ -1,0 +1,13 @@
+.LoadingScreen{
+  width: 100vw;
+  height: 100vh;
+  background-image: $bg-grad;
+  position: absolute;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+.loading__logo{
+  clear: both;
+}

@@ -15,7 +15,7 @@ class ProjectPage extends React.Component{
 
   render = () => {
     return(
-      <div>
+      <div className="ProjectPage">
         <ThreeProject meshScale={10} textures={[{project: this.state.id, path:this.state.project.textureImg}]} currentProject={this.state.id} transition={false} />
         <ProjectInfo project={this.state.project}/>
       </div>

@@ -37,6 +37,6 @@ export const renderer = (width, height) => {
   render.setClearColor(0x000000, 0); //'#FFF7F0'
   render.setSize(width, height);
   render.domElement.id = 'three-canvas';
-  render.domElement.style.display = 'none';
+  // render.domElement.style.display = 'none';
   return render;
 }
