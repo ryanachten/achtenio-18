@@ -116,9 +116,17 @@ class ProjectInfo extends React.Component{
           {liveSite && (
             <section className="project__section liveSite">
               <h2 className="project__sectionHeader">Live Site</h2>
-              <a target="_blank" href={liveSite.url}>{liveSite.label}
-                <i className="fi-link"></i>
-              </a>
+              {liveSite.live
+                // If site is live, provide link
+                ? <a target="_blank" href={liveSite.url}>
+                  {liveSite.label} <i className="fi-link"></i>
+                </a>
+                // If site is down, provide msg
+                : <a>
+                  {liveSite.label} <i className="fi-unlink"></i>
+                </a>
+              }
+
             </section>
           )}
 

@@ -14,7 +14,8 @@ const projects = {
     ],
     liveSite: {
       label: 'oscil.herokuapp.com',
-      url: 'https://oscil.herokuapp.com/'
+      url: 'https://oscil.herokuapp.com/',
+      live: true
     },
     textureImg: 'oscil.png',
     thumbImg: 'oscil.png',
@@ -50,7 +51,8 @@ const projects = {
     ],
     liveSite: {
       label: 'Testing directory',
-      url: 'http://13.54.24.220/'
+      url: 'http://13.54.24.220/',
+      live: true
     },
     textureImg: 'hiko.png',
     thumbImg: 'hiko.png',
@@ -105,7 +107,8 @@ const projects = {
     ],
     liveSite: {
       label: 'vertice.co.nz',
-      url: 'http://vertice.co.nz/'
+      url: 'http://vertice.co.nz/',
+      live: true
     },
     textureImg: 'vertice.png',
     thumbImg: 'vertice.png',
@@ -132,6 +135,10 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/64144681/Visual-Working-Memory-Psychology-Web-App' }
     ],
+    liveSite: {
+      label: 'Under Redevelopment',
+      live: false
+    },
     textureImg: 'vwm.png',
     thumbImg: 'vwm.png',
     videoDocUrl: 'https://vimeo.com/263614649',
@@ -154,6 +161,10 @@ const projects = {
       { host: 'Behance',
       url: 'https://www.behance.net/gallery/64144681/Visual-Working-Memory-Psychology-Web-App' }
     ],
+    liveSite: {
+      label: 'Under Redevelopment',
+      live: false
+    },
     textureImg: 'indi.png',
     thumbImg: 'indi.png',
     videoDocUrl: 'https://vimeo.com/258438578',
