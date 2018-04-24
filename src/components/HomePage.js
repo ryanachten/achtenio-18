@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import projects from '../store';
 import ThreeProject from './ThreeProject';
+import LoadingScreen from '../components/LoadingScreen';
 
 let projectTransition;
 const defaultProject = 'oscil';
@@ -60,6 +61,7 @@ class HomePage extends React.Component{
 
     return(
       <div>
+        <LoadingScreen />
         <Link to={`/work/${this.state.id}`}>
           <ThreeProject
             meshScale={10}

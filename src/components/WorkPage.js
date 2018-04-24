@@ -2,7 +2,8 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router-dom';
 import projects from '../store';
-import SvgFilter from './SvgFilter'
+import SvgFilter from './SvgFilter';
+import LoadingScreen from './LoadingScreen';
 
 class WorkPage extends React.Component{
 
@@ -19,6 +20,8 @@ class WorkPage extends React.Component{
   };
 
   componentDidMount(){
+    $('.thumbnail__container').hide();
+    $('.LoadingScreen').show();
     this.loadedImgContainer = {};
   }
 
@@ -43,52 +46,58 @@ class WorkPage extends React.Component{
   }
 
   fadeInImages(){
-    const projectKeys = Object.keys(projects);
-    let currentIndex = 0;
+    window.setTimeout( () => {
+      $('.thumbnail__container').show();
+      const projectKeys = Object.keys(projects);
+      let currentIndex = 0;
 
-    this.fadeInterval = window.setInterval( () => {
-      const currentKey = projectKeys[currentIndex];
-      $(this.loadedImgContainer[currentKey]).fadeIn();
-      currentIndex++;
+      this.fadeInterval = window.setInterval( () => {
+        const currentKey = projectKeys[currentIndex];
+        $(this.loadedImgContainer[currentKey]).fadeIn();
+        currentIndex++;
 
-      // Once all containers have faded in, remove interval
-      if (currentIndex === projectKeys.length) {
-        window.clearInterval(this.fadeInterval);
-      }
-    }, 700);
+        // Once all containers have faded in, remove interval
+        if (currentIndex === projectKeys.length) {
+          window.clearInterval(this.fadeInterval);
+        }
+      }, 700);
+      $('.LoadingScreen').fadeOut(1000);
+    }, 1000);
   }
 
   render = () => {
 
     return (
-      <div className="thumbnail__container">
+      <div>
+        <LoadingScreen />
+        <div className="thumbnail__container">
+          <SvgFilter />
 
-        <SvgFilter />
+          { Object.keys(projects).map( ( key ) => (
+            <div className="thumbnail__item" key={key}>
+              <Link to={`/work/${key}`}>
+                <img className="thumbnail__img"
+                  src={`/img/thumbs/${projects[key].thumbImg}`}
+                  onMouseEnter={this.startFilter}
+                  onMouseLeave={this.cancelFilter}
+                  onLoad={(e) => {
+                    // store current img's container for fade in
+                    const containerDiv = $(e.target).parents('.thumbnail__item')[0];
+                    this.loadedImgContainer[key] = containerDiv;
 
-        { Object.keys(projects).map( ( key ) => (
-          <div className="thumbnail__item" key={key}>
-            <Link to={`/work/${key}`}>
-              <img className="thumbnail__img"
-                src={`/img/thumbs/${projects[key].thumbImg}`}
-                onMouseEnter={this.startFilter}
-                onMouseLeave={this.cancelFilter}
-                onLoad={(e) => {
-                  // store current img's container for fade in
-                  const containerDiv = $(e.target).parents('.thumbnail__item')[0];
-                  this.loadedImgContainer[key] = containerDiv;
-
-                  // If all images are loaded, start fade in process
-                  if (
-                    Object.keys(this.loadedImgContainer).length ===
-                    Object.keys(projects).length) {
-                      this.fadeInImages();
-                  }
-                }}></img>
-              <h1 className="thumbnail__title">{projects[key].title}</h1>
-              <h2>{projects[key].subtitle}</h2>
-            </Link>
-          </div>
-          )) }
+                    // If all images are loaded, start fade in process
+                    if (
+                      Object.keys(this.loadedImgContainer).length ===
+                      Object.keys(projects).length) {
+                        this.fadeInImages();
+                    }
+                  }}></img>
+                <h1 className="thumbnail__title">{projects[key].title}</h1>
+                <h2>{projects[key].subtitle}</h2>
+              </Link>
+            </div>
+            )) }
+        </div>
       </div>
     )
   }

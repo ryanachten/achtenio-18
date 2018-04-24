@@ -1,6 +1,7 @@
 import React from 'react';
 import projects from '../store';
 import uuid from 'uuid';
+import LoadingScreen from '../components/LoadingScreen';
 import ThreeProject from './ThreeProject';
 import ProjectInfo from './ProjectInfo';
 
@@ -15,9 +16,12 @@ class ProjectPage extends React.Component{
 
   render = () => {
     return(
-      <div className="ProjectPage">
-        <ThreeProject meshScale={10} textures={[{project: this.state.id, path:this.state.project.textureImg}]} currentProject={this.state.id} transition={false} />
-        <ProjectInfo project={this.state.project}/>
+      <div>
+        <LoadingScreen />
+        <div className="ProjectPage">
+          <ThreeProject meshScale={10} textures={[{project: this.state.id, path:this.state.project.textureImg}]} currentProject={this.state.id} transition={false} />
+          <ProjectInfo project={this.state.project}/>
+        </div>
       </div>
     );
   };

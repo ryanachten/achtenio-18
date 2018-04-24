@@ -81,12 +81,13 @@ class ThreeProject extends React.Component {
             materials: materials,
             currentProject: this.props.currentProject}).then(
           (imgObj) => {
-            // Add dependencies to scene and scope, start animation
+            // Add dependencies to scene and scope
             scene.add(imgObj);
             this.imgObj = imgObj;
             this.materials = materials;
             this.mount.appendChild(this.renderer.domElement);
-            // $('#three-canvas').fadeIn(1000);
+
+            // Start intro sequence
             window.setTimeout( () => {
               $('.ProjectPage').show();
               this.start();
