@@ -1,3 +1,7 @@
+.projectpage__container{
+  overflow-x: hidden;
+}
+
 .project__splashContainer{
   align-items: center;
   display: flex;
@@ -6,7 +10,7 @@
   position: absolute;
   text-align: center;
   top: 50vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .project__splashbox{
