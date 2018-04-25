@@ -46,10 +46,10 @@ class AboutPage extends React.Component{
             <i className="fi-social-behance"></i></a></li>
           <li><a href="https://github.com/ryanachten">
             <i className="fi-social-github"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/ryanachten/">
-            <i className="fi-social-linkedin"></i></a></li>
           <li><a href="https://vimeo.com/ryanachten">
             <i className="fi-social-vimeo"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/ryanachten/">
+            <i className="fi-social-linkedin"></i></a></li>
           <li><a href="mailto:ryanachten@gmail.com">
             <i className="fi-mail"></i></a></li>
         </ul>
