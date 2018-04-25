@@ -68,7 +68,7 @@ class WorkPage extends React.Component{
   render = () => {
 
     return (
-      <div>
+      <div className="WorkPage">
         <LoadingScreen />
         <div className="thumbnail__container">
           <SvgFilter />

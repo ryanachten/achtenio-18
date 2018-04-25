@@ -1,9 +1,13 @@
+.WorkPage{
+  overflow-x: hidden;
+}
+
 .thumbnail__container{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 .thumbnail__item{
