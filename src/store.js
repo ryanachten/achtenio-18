@@ -67,7 +67,7 @@ const projects = {
     subtitle: 'School of Design Website',
     description: "The design process for Victoria University of Wellington’s new School of Design website began in 2014. After much research and deliberation, the designs for this site were finally created in 2017. The new site looks to provide the school with a portfolio, showcasing student work in a range of disciplines catered for by the various majors and masters programmes.",
     date: 2017,
-    roles: ['Design'],
+    roles: ['Branding, Design, UI/UX'],
     credits:  [
                 {name: 'Sebastian Paz', role: 'Development'},
                 {name: 'Walter Langelaar', role: 'Research Supervision'}

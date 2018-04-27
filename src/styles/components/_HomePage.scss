@@ -21,3 +21,17 @@
   font-weight: bold;
   letter-spacing: 3px;
 }
+
+@media only screen and (max-width: 500px) {
+
+  .homeview--projectSubtitle{
+    margin-bottom: 0;
+    width: 100vw;
+  }
+  .homeview--projectIndex{
+    order: 3;
+  }
+  .homeview--projectDate{
+    order: 4;
+  }
+}
