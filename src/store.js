@@ -120,7 +120,7 @@ const projects = {
     ]
   },
   vwm: {
-    title: 'VMW',
+    title: 'VWM',
     subtitle: 'Psychology Test Web App',
     description: 'Visual Working Memory is a test designed to measure individual differences in working memory. Working memory is the ability to remember information for long enough to use it. This is a core function of the human information processing system.',
     date: 2017,
@@ -151,7 +151,7 @@ const projects = {
   indi: {
     title: 'indi',
     subtitle: 'Audio-Responsive Website',
-    description: 'Audio-visual website design and development for New Zealand musician, Indi.',
+    description: 'The website for New Zealand musician, Indi, looks to bring her visual identity to life by using her music to create generative visualisations. These audio-visualisations look to extend concepts formerly established in her branding; simulating acoustically-driven microbiological colonies.',
     date: 2017,
     roles: ['Design', 'Development'],
     tools: ['Web Audio API', 'Canvas API', 'Sketch App'],
