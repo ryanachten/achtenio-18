@@ -5,7 +5,6 @@ import projects from '../store';
 import ThreeProject from './ThreeProject';
 import LoadingScreen from '../components/LoadingScreen';
 
-let projectTransition;
 const defaultProject = 'oscil';
 
 class HomePage extends React.Component{
@@ -25,11 +24,11 @@ class HomePage extends React.Component{
   }
 
   componentDidMount() {
-    projectTransition = setInterval( () => this.changeProject(), 10000);
+    this.projectTransition = setInterval( () => this.changeProject(), 10000);
   }
 
   componentWillUnmount() {
-    clearTimeout(projectTransition);
+    clearTimeout(this.projectTransition);
   }
 
   changeProject(){
