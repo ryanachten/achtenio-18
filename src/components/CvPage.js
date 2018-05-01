@@ -16,7 +16,7 @@ const CvPage = () => {
           <h2>JavaScript</h2>
           <ul>
             <li>Babel</li>
-            <li>ES5 & ES6</li>
+            <li>ES6</li>
             <li>jQuery</li>
             <li>React</li>
             <li>Redux	</li>
@@ -69,9 +69,10 @@ const CvPage = () => {
         <div className="cv__item">
           <h2>Learning</h2>
           <ul>
+            <li>Backbone.js</li>
             <li>GLSL</li>
-            <li>Jest</li>
             <li>Node.js</li>
+            <li>RequireJS</li>
           </ul>
         </div>
       </div>
@@ -112,7 +113,7 @@ const CvPage = () => {
         <h1>Work</h1>
         <div className="cv__item">
           <ul>
-            <li><strong>Design Research Assistant</strong>
+            <li><strong>Design Researcher</strong>
                 <br/>Victoria University of Wellington ~ 2017-2018</li>
             <li><strong>Mobile Media, Audio Visual Space, Internet Design, Design Professional Practice Tutor</strong>
                 <br/>Victoria University of Wellington ~ 2017</li>
