@@ -48,7 +48,7 @@ const CvPage = () => {
           </ul>
         </div>
         <div className="cv__item">
-          <h2>Deployment</h2>
+          <h2>Development</h2>
           <ul>
             <li>Git</li>
             <li>Heroku</li>
@@ -120,8 +120,8 @@ const CvPage = () => {
             <li><strong>Innovation Analyst</strong>
                 <br/>Mahuki Innovation Hub, Te Papa ~ 2016</li>
             <li><strong>Software Developer & Commercialisation Assistant</strong>
-                <br/>VicLink ~ 2016</li>
-            <li><strong>Design Research Assistant</strong>
+                <br/>VicLink, Victoria University of Wellington ~ 2016</li>
+            <li><strong>Design Researcher</strong>
                 <br/>Victoria University of Wellington ~ 2014-2016</li>
             <li><strong>Physical Computing & Digital Video Creation Tutor</strong>
                 <br/>Victoria University of Wellington ~ 2015</li>
