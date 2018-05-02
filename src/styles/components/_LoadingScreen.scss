@@ -2,11 +2,12 @@
   align-items: center;
   background-image: $bg-grad;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   height: 100vh;
   justify-content: center;
   left: 0;
   position: fixed;
+  text-align: center;
   top: 0;
   width: 100vw;
   z-index: 99;
