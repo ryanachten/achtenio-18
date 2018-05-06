@@ -27,14 +27,20 @@ class WorkPage extends React.Component{
 
   startFilter(e){
     $(e.target).addClass('svgFilterTarget');
+    this.delta = 0.0;
+    this.max = 100;
+    this.speed = 0.02;
     this.updateFilter();
   };
 
   updateFilter(){
     this.frameId = window.requestAnimationFrame(this.updateFilter);
-    $('feDisplacementMap')[0].scale.baseVal += 0.5;
+    const displacement = (Math.sin(this.delta)*this.max).toFixed(2);
+    this.delta+=this.speed;
 
-    if ($('feDisplacementMap')[0].scale.baseVal > 500) {
+    $('feDisplacementMap')[0].scale.baseVal = displacement;
+
+    if ($('feDisplacementMap')[0].scale.baseVal > 100) {
       window.cancelAnimationFrame(this.frameId);
     }
   }
