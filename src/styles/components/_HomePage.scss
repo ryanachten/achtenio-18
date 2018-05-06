@@ -1,9 +1,10 @@
 .homeview--projectInfo{
+  align-items: center;
   display: flex;
+  flex: 1 1 0;
   flex-flow: row wrap;
   justify-content: space-around;
   text-align: center;
-  align-items: center;
 }
 .homeview--projectIndex{
   font-family: $type-kumar;
