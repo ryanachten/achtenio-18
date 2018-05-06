@@ -11,7 +11,7 @@ body{
   background-image: $bg-grad;
   display: flex;
   flex: 1 1 0;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   min-height: 100vh;
   height: 100%;
 }
