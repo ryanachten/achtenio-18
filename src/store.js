@@ -59,6 +59,8 @@ const projects = {
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c15dd62469047.5a913670eeab9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/98636b62469047.5a9138de43763.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1e76f362469047.5a9138de426ef.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ad849262469047.5a9138de439f9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e3242362469047.5a913c32d3766.jpg'
     ]
   },
@@ -114,9 +116,13 @@ const projects = {
     thumbImg: 'vertice.png',
     videoDocUrl: 'https://vimeo.com/188456099',
     images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee5cbd60149489.5a3e1aab93972.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7909060149489.5a3e178a9f477.png'
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9ea53a60149489.5a3e178a9e478.png',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7909060149489.5a3e178a9f477.png',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/cc944260149489.5a3e178a9ebe4.png',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/0dc75160149489.5a446a913d09d.png',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/ee5cbd60149489.5a3e1aab93972.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/85feba60149489.5a3e178a9d8c8.png'
     ]
   },
   vwm: {
@@ -145,7 +151,8 @@ const projects = {
     images: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/cd21ef64144681.5ac95f806b35b.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/186a6864144681.5ac94db51194d.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/fb817464144681.5ac94db511d4e.jpg'
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/fb817464144681.5ac94db511d4e.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/69737364144681.5ac950b9b0bea.jpg'
     ]
   },
   indi: {
