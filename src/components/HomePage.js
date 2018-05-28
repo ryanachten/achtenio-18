@@ -5,7 +5,7 @@ import projects from '../store';
 import ThreeProject from './ThreeProject';
 import LoadingScreen from '../components/LoadingScreen';
 
-const defaultProject = 'oscil';
+const defaultProject = 'lucid';
 
 class HomePage extends React.Component{
   constructor(props){

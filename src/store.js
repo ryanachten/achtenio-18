@@ -1,4 +1,31 @@
 const projects = {
+  lucid: {
+    title: 'Lucid',
+    subtitle: 'Mixed-Reality Web App',
+    description: 'Lucid is a mixed-reality application which allows users to design and experience psychedelic visualisations through their browser and virtual-reality headsets. Taking a low-resolution video feed from a user’s device, Lucid creates patterns using 3D geometry and shaders before rendering stereoscopically.',
+    date: 2018,
+    roles: ['Design','Development'],
+    tools: ['React', 'Redux', 'Babel', 'Webpack', 'Three.js', 'Sketch App', 'Maxon Cinema 4D'],
+    social: [
+      { host: 'Github',
+      url: 'https://github.com/ryanachten/Lucid' },
+      { host: 'Behance',
+      url: 'https://www.behance.net/gallery/66084939/Lucid-Mixed-Reality-Psychedelia' }
+    ],
+    liveSite: {
+      label: 'lucidreality.herokuapp.com',
+      url: 'https://lucidreality.herokuapp.com/',
+      live: true
+    },
+    textureImg: 'lucid.png',
+    thumbImg: 'lucid.png',
+    videoDocUrl: 'https://vimeo.com/272136707',
+    images: [
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1286b366084939.5b0b3d2063f62.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/56c97666084939.5b0a88494c863.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1ed0fc66084939.5b0b4ec67be87.jpg'
+    ]
+  },
   oscil: {
     title: 'Oscil',
     subtitle: 'Audio-Visual Web App',
@@ -153,32 +180,6 @@ const projects = {
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/186a6864144681.5ac94db51194d.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/fb817464144681.5ac94db511d4e.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/69737364144681.5ac950b9b0bea.jpg'
-    ]
-  },
-  indi: {
-    title: 'indi',
-    subtitle: 'Audio-Responsive Website',
-    description: 'The website for New Zealand musician, Indi, looks to bring her visual identity to life by using her music to create generative visualisations. These audio-visualisations look to extend concepts formerly established in her branding; simulating acoustically-driven microbiological colonies.',
-    date: 2017,
-    roles: ['Design', 'Development'],
-    tools: ['Web Audio API', 'Canvas API', 'Sketch App'],
-    social: [
-      { host: 'Github',
-      url: 'https://github.com/ryanachten/VWM' },
-      { host: 'Behance',
-      url: 'https://www.behance.net/gallery/64144681/Visual-Working-Memory-Psychology-Web-App' }
-    ],
-    liveSite: {
-      label: 'Under Redevelopment',
-      live: false
-    },
-    textureImg: 'indi.png',
-    thumbImg: 'indi.png',
-    videoDocUrl: 'https://vimeo.com/258438578',
-    images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c7fdff62797437.5a9f9c3dc3034.gif',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/897f1562797437.5a9fa38b23c07.gif',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/0ee02562797437.5aa2eee5a1aa1.gif'
     ]
   }
 };
