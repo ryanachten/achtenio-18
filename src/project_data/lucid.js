@@ -16,7 +16,7 @@ export default {
     url: 'https://lucidreality.herokuapp.com/',
     live: true
   },
-  textureImg: 'lucid2.png',
+  textureImg: 'lucid.png',
   thumbImg: 'lucid.png',
   videoDocUrl: 'https://vimeo.com/272136707',
   sections: [
