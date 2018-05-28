@@ -59,9 +59,26 @@
 }
 
 .project__img{
+  border-radius: 10px;
   display: block;
-  margin: 20px auto;
+  margin: 50px auto 30px auto;
   width: 90%;
+}
+.project__text{
+  margin: 20px auto 40px auto;
+  white-space: pre-wrap;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+
+  h2{
+    font-size: 2rem;
+  }
+  p{
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin: 0 20px;
+  }
 }
 
 .project__socialItem{

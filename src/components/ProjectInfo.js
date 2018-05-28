@@ -47,7 +47,7 @@ class ProjectInfo extends React.Component{
       liveSite,
       textureImg,
       videoDocUrl,
-      images
+      sections
     } = this.props.project;
 
     return(
@@ -149,14 +149,28 @@ class ProjectInfo extends React.Component{
           </div>
         )}
 
-        { images.map( (img) => (
-
-          <img key={uuid()} className="project__img" src={img}
-            onMouseEnter={this.startFilter}
-            onMouseLeave={this.cancelFilter}
-            ></img>
-
-        ))}
+        { sections.map( (section) => {
+          if (section.type === 'image') {
+            return (
+              <img key={uuid()} className="project__img" src={section.url}
+                onMouseEnter={this.startFilter}
+                onMouseLeave={this.cancelFilter}
+                ></img>
+            );
+          }else if (section.type === 'text') {
+            return (
+              <div key={uuid()} className="project__text">
+                {section.header && (
+                  <h2>{section.header}</h2>
+                )}
+                {section.subheader && (
+                  <h3>{section.subheader}</h3>
+                )}
+                <p>{section.content}</p>
+              </div>
+            );
+          }
+        })}
 
         <section className="project__section">
           <h2 className="project__sectionHeader">Further Info</h2>

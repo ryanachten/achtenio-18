@@ -1,31 +1,7 @@
+import lucid from './project_data/lucid.js';
+
 const projects = {
-  lucid: {
-    title: 'Lucid',
-    subtitle: 'Mixed-Reality Web App',
-    description: 'Lucid is a mixed-reality application which allows users to design and experience psychedelic visualisations through their browser and virtual-reality headsets. Taking a low-resolution video feed from a user’s device, Lucid creates patterns using 3D geometry and shaders before rendering stereoscopically.',
-    date: 2018,
-    roles: ['Design','Development'],
-    tools: ['React', 'Redux', 'Babel', 'Webpack', 'Three.js', 'Sketch App', 'Maxon Cinema 4D'],
-    social: [
-      { host: 'Github',
-      url: 'https://github.com/ryanachten/Lucid' },
-      { host: 'Behance',
-      url: 'https://www.behance.net/gallery/66084939/Lucid-Mixed-Reality-Psychedelia' }
-    ],
-    liveSite: {
-      label: 'lucidreality.herokuapp.com',
-      url: 'https://lucidreality.herokuapp.com/',
-      live: true
-    },
-    textureImg: 'lucid.png',
-    thumbImg: 'lucid.png',
-    videoDocUrl: 'https://vimeo.com/272136707',
-    images: [
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1286b366084939.5b0b3d2063f62.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/56c97666084939.5b0a88494c863.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1ed0fc66084939.5b0b4ec67be87.jpg'
-    ]
-  },
+  lucid,
   oscil: {
     title: 'Oscil',
     subtitle: 'Audio-Visual Web App',
@@ -47,7 +23,7 @@ const projects = {
     textureImg: 'oscil.png',
     thumbImg: 'oscil.png',
     videoDocUrl: 'https://vimeo.com/265857715',
-    images: [
+    sections: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e466c64019463.5ada9e2d69c5d.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/6ef6c264019463.5ad99b8e47190.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/23810d64019463.5adab34341732.jpg',
@@ -83,7 +59,7 @@ const projects = {
     },
     textureImg: 'hiko.png',
     thumbImg: 'hiko.png',
-    images: [
+    sections: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1c15dd62469047.5a913670eeab9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/98636b62469047.5a9138de43763.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/1e76f362469047.5a9138de426ef.jpg',
@@ -108,7 +84,7 @@ const projects = {
     ],
     textureImg: 'vuw.png',
     thumbImg: 'vuw.png',
-    images: [
+    sections: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/2bf35a60161381.5a51b2112e4e9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e70b1b60161381.5a51b2112e8e9.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/4f50b960161381.5a5177d2a8280.jpg'
@@ -142,7 +118,7 @@ const projects = {
     textureImg: 'vertice.png',
     thumbImg: 'vertice.png',
     videoDocUrl: 'https://vimeo.com/188456099',
-    images: [
+    sections: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png',
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9ea53a60149489.5a3e178a9e478.png',
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b7909060149489.5a3e178a9f477.png',
@@ -175,7 +151,7 @@ const projects = {
     textureImg: 'vwm.png',
     thumbImg: 'vwm.png',
     videoDocUrl: 'https://vimeo.com/263614649',
-    images: [
+    sections: [
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/cd21ef64144681.5ac95f806b35b.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/186a6864144681.5ac94db51194d.jpg',
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/fb817464144681.5ac94db511d4e.jpg',
