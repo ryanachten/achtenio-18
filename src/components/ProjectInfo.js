@@ -14,15 +14,22 @@ class ProjectInfo extends React.Component{
     this.updateFilter = this.updateFilter.bind(this);
   }
 
-  startFilter({target}){
-    $(target).addClass('svgFilterTarget');
+  startFilter(e){
+    $(e.target).addClass('svgFilterTarget');
+    this.delta = 0.0;
+    this.max = 100;
+    this.speed = 0.02;
     this.updateFilter();
   };
 
   updateFilter(){
     this.frameId = window.requestAnimationFrame(this.updateFilter);
-    $('feDisplacementMap')[0].scale.baseVal += 0.2;
-    if ($('feDisplacementMap')[0].scale.baseVal > 500) {
+    const displacement = (Math.sin(this.delta)*this.max).toFixed(2);
+    this.delta+=this.speed;
+
+    $('feDisplacementMap')[0].scale.baseVal = displacement;
+
+    if ($('feDisplacementMap')[0].scale.baseVal > 100) {
       window.cancelAnimationFrame(this.frameId);
     }
   }
@@ -133,18 +140,22 @@ class ProjectInfo extends React.Component{
         </div>
 
         {videoDocUrl && (
-          <div className="vimeo__wrapper">
-            <ReactPlayer
-              className="vimeo__player"
-              url={videoDocUrl}
-              width='100%'
-              height='100%'
-              onReady={() => {
-                $('.vimeo__loadingScreen').hide();
-                $('.vimeo__player').fadeIn();
-            }}/>
-            <div className="vimeo__loadingScreen">
-              <h2>Video Loading...</h2>
+          <div className="vimeo__container">
+            <h2 className="project__sectionHeader">Video Documentation</h2>
+            <div className="vimeo__wrapper">
+
+              <ReactPlayer
+                className="vimeo__player"
+                url={videoDocUrl}
+                width='100%'
+                height='100%'
+                onReady={() => {
+                  $('.vimeo__loadingScreen').hide();
+                  $('.vimeo__player').fadeIn();
+              }}/>
+              <div className="vimeo__loadingScreen">
+                <h2>Video Loading...</h2>
+              </div>
             </div>
           </div>
         )}

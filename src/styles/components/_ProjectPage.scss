@@ -63,6 +63,7 @@
   display: block;
   margin: 50px auto 30px auto;
   width: 90%;
+  max-width: 1400px;
 }
 .project__text{
   margin: 20px auto 40px auto;
@@ -93,9 +94,17 @@
   display: none;
 }
 
+.vimeo__container{
+  margin: 50px auto;
+
+  .project__sectionHeader{
+    text-align: center;
+  }
+}
+
 .vimeo__wrapper{
   height: 40vw;
-  margin: 30px auto 50px auto;
+  margin: 0 auto;
   max-height: 600px;
   max-width: 1200px;
   width: 80vw;
