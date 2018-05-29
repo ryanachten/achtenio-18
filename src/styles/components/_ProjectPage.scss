@@ -120,3 +120,17 @@
   max-width: 1200px;
   width: 80vw;
 }
+
+.seeMore__container{
+  margin: 50px 0;
+}
+.seeMore__button{
+  border: dotted 1px $body-color;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 20px 20px 10px 20px;
+
+  h1{
+    margin: 20px 0 0 0;
+  }
+}

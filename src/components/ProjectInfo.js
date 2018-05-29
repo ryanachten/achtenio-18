@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import uuid from 'uuid';
 import $ from 'jquery';
 import SvgFilter from './SvgFilter';
@@ -17,7 +18,7 @@ class ProjectInfo extends React.Component{
   startFilter(e){
     $(e.target).addClass('svgFilterTarget');
     this.delta = 0.0;
-    this.max = 100;
+    this.max = 50;
     this.speed = 0.02;
     this.updateFilter();
   };
@@ -29,7 +30,7 @@ class ProjectInfo extends React.Component{
 
     $('feDisplacementMap')[0].scale.baseVal = displacement;
 
-    if ($('feDisplacementMap')[0].scale.baseVal > 100) {
+    if ($('feDisplacementMap')[0].scale.baseVal > this.max) {
       window.cancelAnimationFrame(this.frameId);
     }
   }
@@ -183,18 +184,12 @@ class ProjectInfo extends React.Component{
           }
         })}
 
-        <section className="project__section">
-          <h2 className="project__sectionHeader">Further Info</h2>
-          <p>Interested? See further documentation at the links below:</p>
-          <ul>
-            {social.map( (site)=>(
-              <li className="project__socialItem" key={uuid()}>
-                <a target="_blank" className={`project__socialIcon`} href={site.url}>
-                  <i className={`fi-social-${site.host.toLowerCase()}`}></i>
-                </a>
-              </li>
-            ))}
-          </ul>
+        <section className="project__section seeMore__container">
+          <Link className="seeMore__button"
+            to={`/work`}>
+            <h2 className="project__sectionHeader">Show Me More</h2>
+            <h1>Work</h1>
+          </Link>
         </section>
       </div>
     );
