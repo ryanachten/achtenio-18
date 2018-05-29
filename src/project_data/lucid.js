@@ -23,6 +23,8 @@ export default {
     { type: 'image', url:
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1286b366084939.5b0b3d2063f62.jpg' },
     { type: 'image', url:
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d07ec766084939.5b0dd2a7c8496.jpg' },
+    { type: 'image', url:
       'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3c6bb666084939.5b0b3d2064968.png' },
     { type: 'text', header: 'Stack',
       content: "This application leverages an array of excellent resources including Three.js for visualisations, React and Google’s Material Design language for user interface, Redux for state management, and Webpack for bundling."

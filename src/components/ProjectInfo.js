@@ -138,7 +138,9 @@ class ProjectInfo extends React.Component{
             </section>
           )}
 
-        </div>
+          <hr className="project__divider" />
+
+        </div>        
 
         {videoDocUrl && (
           <div className="vimeo__container">
