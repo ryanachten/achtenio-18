@@ -35,20 +35,20 @@ export default {
       content: "Initially researched and developed as part of Ryan Achten’s MDI research, the software was identified and subsequently funded by Victoria University of Wellington’s commercialisation office, VicLink in 2016. The funding resulted in a WebGL build of the software, with improved metadata description and user interface. Completed in November, 2016."
     },
     { type: 'image', url:
-      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/e6613960149489.5a3e122595904.png' },
-    { type: 'image', url:
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/52c5c060149489.5a3e10aad7e09.png' },
     { type: 'image', url:
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/50799260149489.5a3e122595e26.png' },
+    { type: 'text', header: 'UX Studies',
+      content: "To anticipate how users will adopt the Vertice software, a number of user experience exercises were undertaken. User goals and concerns for using the software were derived from assumptive user personas. These were grouped into tasks and then abstracted further into events which provided the foundations for scenes within the software. Software events, tasks and goals were laid out in a user experience map, from which user experience models were extrapolated."
+    },
+    { type: 'image', url:
+      'https://mir-s3-cdn-cf.behance.net/project_modules/fs/04985944228025.580c04cc95e8b.png' },
+    { type: 'image', url:
+      'https://mir-s3-cdn-cf.behance.net/project_modules/fs/3e2aca44228025.580c04cc9654e.png' },
+    { type: 'image', url:
+      'https://mir-s3-cdn-cf.behance.net/project_modules/fs/ffb21344228025.580c04cc96b33.png' },
     { type: 'image', url:
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/3b251e60149489.5a3e1225955ea.png' },
-    { type: 'image', url:
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f524ee60149489.5a3e14b34a016.png' },
-    { type: 'image', url:
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/54ae0360149489.5a3e152382231.png' },
-    { type: 'text',
-      content: "A key aspect of this phase of research and development was designing and implementing a more effective means of describing 3D digital artefacts. While a number of precedents for achieving this were explored, the resulting approach leaned upon the Dublin Core Metadata Element Set, which was extended to encompass details specific to digital three-dimensional cultural artefacts."
-    },
     { type: 'image', url:
       'https://mir-s3-cdn-cf.behance.net/project_modules/1400/10173160149489.5a3e14b34a603.png' },
     { type: 'image', url:
